@@ -4,7 +4,7 @@ import GradientDisplay from "../entities/GradientDisplay"
 
 function App() {
   return (
-    <main>
+    <main className="main-content | container">
       <ControlPanel />
       <GradientDisplay />
     </main>
