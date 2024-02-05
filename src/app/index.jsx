@@ -1,4 +1,4 @@
-import "./index.css"
+import "./ui/global.css"
 import ControlPanel from "../widgets/ControlPanel"
 import GradientDisplay from "../entities/GradientDisplay"
 
