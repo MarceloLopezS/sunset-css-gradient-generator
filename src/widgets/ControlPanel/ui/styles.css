@@ -1,0 +1,8 @@
+aside.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-100);
+  max-width: max(18rem, 18vw);
+  padding: var(--size-150);
+  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.15);
+}

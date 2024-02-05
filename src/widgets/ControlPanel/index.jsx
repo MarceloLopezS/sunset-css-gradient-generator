@@ -1,3 +1,4 @@
+import "./ui/styles.css"
 import GeneratedCode from "../../entities/GeneratedCode"
 import ColorControl from "../../features/ColorControl"
 import OutputFormat from "../../features/OutputFormat"
@@ -9,7 +10,7 @@ import ControlPanelFooter from "./ui/ControlPanelFooter"
 
 const ControlPanel = () => {
   return (
-    <aside>
+    <aside className="control-panel">
       <ControlPanelDisplayToggler />
       <ControlPanelHeader />
       <GradientStyle />
