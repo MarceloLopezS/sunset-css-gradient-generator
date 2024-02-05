@@ -21,7 +21,9 @@
   --fw-regular: 400;
   --fw-bold: 600;
 
-  --size-150: 2rem;
+  --size-100: 1rem;
+  --size-125: 1.25rem;
+  --size-150: 1.5rem;
 }
 
 /* CSS Reset */
