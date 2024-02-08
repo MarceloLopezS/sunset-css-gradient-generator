@@ -4,14 +4,12 @@ import ColorControl from "../../features/ColorControl"
 import OutputFormat from "../../features/OutputFormat"
 import GradientDirection from "../../features/GradientDirection"
 import GradientStyle from "../../features/GradientStyle"
-import ControlPanelDisplayToggler from "./ui/ControlPanelDisplayToggler"
 import ControlPanelHeader from "./ui/ControlPanelHeader"
 import ControlPanelFooter from "./ui/ControlPanelFooter"
 
 const ControlPanel = () => {
   return (
     <aside className="control-panel">
-      <ControlPanelDisplayToggler />
       <ControlPanelHeader />
       <GradientStyle />
       <GradientDirection />

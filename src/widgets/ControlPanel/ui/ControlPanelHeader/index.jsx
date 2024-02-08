@@ -1,11 +1,16 @@
+import "./ui/styles.css"
 import ThemeToggler from "../../../../shared/ui/ThemeToggler"
+import ControlPanelDisplayToggler from "../ControlPanelDisplayToggler"
 
 const ControlPanelHeader = () => {
   return (
-    <div>
+    <header className="control-panel__header">
+      <div className="control-panel__togglers-wrapper">
+        <ThemeToggler />
+        <ControlPanelDisplayToggler />
+      </div>
       <h1>CSS Gradient Generator</h1>
-      <ThemeToggler />
-    </div>
+    </header>
   )
 }
 
