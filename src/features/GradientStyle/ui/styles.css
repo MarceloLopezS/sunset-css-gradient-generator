@@ -1,0 +1,5 @@
+.control-panel__styles-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-block-start: var(--size-50);
+}
