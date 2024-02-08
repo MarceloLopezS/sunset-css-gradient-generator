@@ -1,0 +1,5 @@
+.control-panel__togglers-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: var(--size-100);
+}
