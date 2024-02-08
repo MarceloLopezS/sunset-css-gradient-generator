@@ -1,0 +1,7 @@
+.btn {
+  color: var(--clr-theme);
+  background-color: transparent;
+  padding: 0.2em 1em;
+  border: 2px solid var(--clr-accent-300);
+  border-radius: 0.35em;
+}
