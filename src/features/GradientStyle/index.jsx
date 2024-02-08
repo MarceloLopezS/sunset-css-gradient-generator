@@ -1,11 +1,14 @@
+import "./ui/styles.css"
+import Button from "../../shared/ui/Button"
+
 const GradientStyle = () => {
   return (
-    <section>
-      <p>Stlyle</p>
-      <div>
-        <button>Linear</button>
-        <button>Circular</button>
-        <button>Conic</button>
+    <section className="control-panel__styles">
+      <p className="text-bold">Style</p>
+      <div className="control-panel__styles-controls">
+        <Button>Linear</Button>
+        <Button>Circular</Button>
+        <Button>Conic</Button>
       </div>
     </section>
   )
