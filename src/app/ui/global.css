@@ -20,6 +20,12 @@
   --fw-regular: 400;
   --fw-bold: 600;
 
+  --fs-100: 1rem;
+  --fs-125: 1.25rem;
+  --fs-150: 1.5rem;
+
+  --fs-title: clamp(var(--fs-125), 1.5vw, var(--fs-150));
+
   --size-50: 0.5rem;
   --size-100: 1rem;
   --size-125: 1.25rem;
@@ -133,6 +139,10 @@ button {
   color: var(--accent-theme);
   width: 100%;
   height: 100%;
+}
+
+.text-bold {
+  font-weight: var(--fw-bold);
 }
 
 .visually-hidden {
