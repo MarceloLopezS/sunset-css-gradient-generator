@@ -9,7 +9,9 @@ const ControlPanelHeader = () => {
         <ThemeToggler />
         <ControlPanelDisplayToggler />
       </div>
-      <h1>CSS Gradient Generator</h1>
+      <h1 className="control-panel__title | text-bold">
+        Sunset - CSS Gradient Generator
+      </h1>
     </header>
   )
 }

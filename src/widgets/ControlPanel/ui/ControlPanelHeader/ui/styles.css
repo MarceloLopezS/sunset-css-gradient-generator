@@ -1,5 +1,13 @@
+.control-panel__header {
+  padding-block-end: var(--size-50);
+}
+
 .control-panel__togglers-wrapper {
   display: flex;
   justify-content: space-between;
   margin-block-end: var(--size-100);
+}
+
+.control-panel__title {
+  font-size: var(--fs-title);
 }
