@@ -1,15 +1,15 @@
-import "./ui/styles.css"
+import ButtonGrid from "../../shared/ui/ButtonGrid"
 import Button from "../../shared/ui/Button"
 
 const GradientStyle = () => {
   return (
     <section className="control-panel__styles">
-      <p className="text-bold">Style</p>
-      <div className="control-panel__styles-controls">
+      <p className="text-bold margin-block-end-50">Style</p>
+      <ButtonGrid>
         <Button>Linear</Button>
         <Button>Circular</Button>
         <Button>Conic</Button>
-      </div>
+      </ButtonGrid>
     </section>
   )
 }
