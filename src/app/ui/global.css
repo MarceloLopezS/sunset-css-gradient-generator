@@ -3,7 +3,7 @@
   --clr-neutral-800: hsl(240, 10%, 16%);
 
   --clr-accent-200: #efe7eb;
-  --clr-accent-300: #cfb4c0;
+  --clr-accent-400: #bf9bac;
   --clr-accent-800: hsl(333, 22%, 20%);
 
   --clr-theme-light: var(--clr-accent-800);
@@ -13,7 +13,7 @@
 
   --clr-theme: var(--clr-theme-light);
   --bg-theme: var(--bg-theme-light);
-  --accent-theme: var(--clr-accent-800);
+  --accent-theme: var(--clr-accent-400);
 
   --ff-neutral: system-ui, -apple-system, sans-serif;
 
@@ -99,14 +99,13 @@ body {
 [data-theme="dark"] {
   --clr-theme: var(--clr-theme-dark);
   --bg-theme: var(--bg-theme-dark);
-  --accent-theme: var(--clr-accent-300);
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     --clr-theme: var(--clr-theme-dark);
     --bg-theme: var(--bg-theme-dark);
-    --accent-theme: var(--clr-accent-300);
+    --accent-theme: var(--clr-accent-400);
   }
 }
 
@@ -145,6 +144,10 @@ button {
 
 .text-bold {
   font-weight: var(--fw-bold);
+}
+
+.margin-block-end-50 {
+  margin-block-end: var(--size-50);
 }
 
 .visually-hidden {
