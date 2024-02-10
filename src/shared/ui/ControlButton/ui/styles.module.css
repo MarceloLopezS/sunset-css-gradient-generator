@@ -1,7 +1,9 @@
 .btn {
+  display: grid;
+  place-items: center;
+  height: var(--size-215);
   color: var(--clr-theme);
   background-color: transparent;
-  padding-block: 0.2em;
   border: 2px solid var(--accent-theme);
   border-radius: 0.35em;
   transition: background-color 500ms ease;
