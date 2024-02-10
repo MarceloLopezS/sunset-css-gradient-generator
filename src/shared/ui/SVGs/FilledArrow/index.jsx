@@ -18,7 +18,11 @@ const getRotation = direction => {
   }
 }
 
-const ArrowSVG = ({ classList = [], attributes = {}, direction = TO_TOP }) => {
+const FilledArrowSVG = ({
+  classList = [],
+  attributes = {},
+  direction = TO_TOP
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -48,4 +52,4 @@ const ArrowSVG = ({ classList = [], attributes = {}, direction = TO_TOP }) => {
   )
 }
 
-export default ArrowSVG
+export default FilledArrowSVG
