@@ -1,7 +1,7 @@
 import ButtonGrid from "../../shared/ui/ButtonGrid"
 import ControlButton from "../../shared/ui/ControlButton"
 
-const GradientStyle = () => {
+const GradientStyleControl = () => {
   return (
     <section className="control-panel__styles">
       <p className="text-bold margin-block-end-50">Style</p>
@@ -14,4 +14,4 @@ const GradientStyle = () => {
   )
 }
 
-export default GradientStyle
+export default GradientStyleControl
