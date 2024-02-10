@@ -28,11 +28,15 @@
 
   --fs-title: clamp(var(--fs-125), 1.5vw, var(--fs-150));
 
+  --size-20: 0.2rem;
   --size-50: 0.5rem;
+  --size-95: 0.95rem;
   --size-100: 1rem;
   --size-125: 1.25rem;
   --size-150: 1.5rem;
   --size-215: 2.15rem;
+
+  --control-height: var(--size-215);
 }
 
 /* CSS Reset */
@@ -145,6 +149,10 @@ button {
 
 .text-bold {
   font-weight: var(--fw-bold);
+}
+
+.text-center {
+  text-align: center;
 }
 
 .margin-block-end-50 {
