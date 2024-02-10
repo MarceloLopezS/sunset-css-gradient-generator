@@ -1,12 +1,15 @@
+import ButtonGrid from "../../shared/ui/ButtonGrid"
+import ControlButton from "../../shared/ui/ControlButton"
+
 const OutputFormat = () => {
   return (
     <section>
-      <p>Output Format</p>
-      <div>
-        <button>Hex</button>
-        <button>RGB</button>
-        <button>HSL</button>
-      </div>
+      <p className="text-bold margin-block-end-50">Output Format</p>
+      <ButtonGrid>
+        <ControlButton>Hex</ControlButton>
+        <ControlButton>RGB</ControlButton>
+        <ControlButton>HSL</ControlButton>
+      </ButtonGrid>
     </section>
   )
 }
