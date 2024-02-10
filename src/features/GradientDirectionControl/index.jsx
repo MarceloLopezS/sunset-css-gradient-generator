@@ -3,7 +3,7 @@ import ControlButton from "../../shared/ui/ControlButton"
 import NarrowArrowSVG from "../../shared/ui/SVGs/NarrowArrow"
 import NarrowCircleSVG from "../../shared/ui/SVGs/NarrowCircle"
 
-const GradientDirection = () => {
+const GradientDirectionControl = () => {
   return (
     <section>
       <p className="text-bold margin-block-end-50">Direction</p>
@@ -49,4 +49,4 @@ const GradientDirection = () => {
   )
 }
 
-export default GradientDirection
+export default GradientDirectionControl

@@ -1,7 +1,7 @@
 import ButtonGrid from "../../shared/ui/ButtonGrid"
 import ControlButton from "../../shared/ui/ControlButton"
 
-const OutputFormat = () => {
+const OutputFormatControl = () => {
   return (
     <section>
       <p className="text-bold margin-block-end-50">Output Format</p>
@@ -14,4 +14,4 @@ const OutputFormat = () => {
   )
 }
 
-export default OutputFormat
+export default OutputFormatControl
