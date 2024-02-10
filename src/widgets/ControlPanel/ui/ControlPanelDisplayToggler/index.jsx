@@ -1,11 +1,11 @@
-import ArrowSVG from "../../../../shared/ui/SVGs/Arrow"
+import FilledArrowSVG from "../../../../shared/ui/SVGs/FilledArrow"
 import "./ui/styles.css"
 
 const ControlPanelDisplayToggler = () => {
   return (
     <button className="control-panel--toggler | toggler-button">
       <span className="visually-hidden">Toggle Panel Display</span>
-      <ArrowSVG direction="to-left" />
+      <FilledArrowSVG direction="to-left" />
     </button>
   )
 }
