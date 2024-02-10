@@ -1,14 +1,14 @@
 import ButtonGrid from "../../shared/ui/ButtonGrid"
-import Button from "../../shared/ui/Button"
+import ControlButton from "../../shared/ui/ControlButton"
 
 const GradientStyle = () => {
   return (
     <section className="control-panel__styles">
       <p className="text-bold margin-block-end-50">Style</p>
       <ButtonGrid>
-        <Button>Linear</Button>
-        <Button>Circular</Button>
-        <Button>Conic</Button>
+        <ControlButton>Linear</ControlButton>
+        <ControlButton>Circular</ControlButton>
+        <ControlButton>Conic</ControlButton>
       </ButtonGrid>
     </section>
   )
