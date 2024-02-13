@@ -141,10 +141,20 @@ button {
   border: none;
 }
 
+.toggler-button:focus-visible {
+  outline: 1px solid transparent;
+}
+
 .toggler-button svg {
   color: var(--accent-theme);
   width: 100%;
   height: 100%;
+  transition: color 500ms ease;
+}
+
+.toggler-button:hover svg,
+.toggler-button:focus-visible svg {
+  color: var(--clr-theme);
 }
 
 .text-bold {
