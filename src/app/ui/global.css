@@ -2,8 +2,8 @@
   --clr-neutral-200: hsl(240, 10%, 96%);
   --clr-neutral-800: hsl(240, 10%, 16%);
 
-  --clr-accent-200: #efe7eb;
-  --clr-accent-400: #bf9bac;
+  --clr-accent-200: hsl(330, 20%, 92%);
+  --clr-accent-400: hsl(332, 22%, 68%);
   --clr-accent-800: hsl(333, 22%, 20%);
 
   --clr-theme-light: var(--clr-accent-800);
