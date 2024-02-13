@@ -21,7 +21,13 @@
   padding: var(--size-20) var(--size-95);
   border: 2px solid var(--accent-theme);
   border-radius: 0.25em;
+  outline: 1px solid transparent;
   cursor: pointer;
+  transition: border-color 500ms ease;
+}
+
+.input[type="color"]:focus-visible {
+  border-color: var(--clr-theme);
 }
 
 .input[type="text"] {
@@ -39,4 +45,9 @@
   padding-inline: 1.25em;
   border: 2px solid var(--accent-theme);
   border-radius: 0.25em;
+  transition: border-color 500ms ease;
+}
+
+.percentage-container:focus-within {
+  border-color: var(--clr-theme);
 }
