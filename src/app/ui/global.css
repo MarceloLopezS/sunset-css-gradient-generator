@@ -29,6 +29,7 @@
   --fs-title: clamp(var(--fs-125), 1.5vw, var(--fs-150));
 
   --size-20: 0.2rem;
+  --size-25: 0.25rem;
   --size-50: 0.5rem;
   --size-95: 0.95rem;
   --size-100: 1rem;
@@ -95,10 +96,19 @@ picture {
   }
 }
 
+/* Main Styles */
+
 body {
   font-family: var(--ff-neutral);
   color: var(--clr-theme);
   background-color: var(--bg-theme);
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: 1px solid transparent;
 }
 
 [data-theme="dark"] {
@@ -122,10 +132,6 @@ body {
 }
 
 /* Utility Classes */
-
-button {
-  cursor: pointer;
-}
 
 .container {
   max-width: 120rem;
