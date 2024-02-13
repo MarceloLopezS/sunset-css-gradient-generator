@@ -1,0 +1,23 @@
+.code-container {
+  --padding: var(--size-25);
+
+  position: relative;
+  height: calc(var(--control-height) * 2);
+  padding: var(--padding);
+  border: 2px solid var(--accent-theme);
+  border-radius: 0.25em;
+}
+
+.copy-to-clipboard {
+  position: absolute;
+  top: var(--padding);
+  right: var(--padding);
+  width: var(--size-100);
+  color: var(--accent-theme);
+  transition: color 500ms ease;
+}
+
+.copy-to-clipboard:hover,
+.copy-to-clipboard:focus-visible {
+  color: var(--clr-theme);
+}

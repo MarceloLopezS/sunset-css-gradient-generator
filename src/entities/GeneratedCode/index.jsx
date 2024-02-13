@@ -1,10 +1,16 @@
+import styles from "./ui/styles.module.css"
+import ClipboardSVG from "../../shared/ui/SVGs/Clipboard"
+
 const GeneratedCode = () => {
   return (
     <section>
-      <p>Generated Code</p>
-      <div>
+      <p className="text-bold margin-block-end-50">Generated Code</p>
+      <div className={styles["code-container"]}>
         <code></code>
-        <button>Copy code to clipboard</button>
+        <button className={styles["copy-to-clipboard"]}>
+          <span className="visually-hidden">Copy code to clipboard</span>
+          <ClipboardSVG />
+        </button>
       </div>
     </section>
   )
