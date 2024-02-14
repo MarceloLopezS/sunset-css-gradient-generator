@@ -1,5 +1,6 @@
 :root {
   --clr-neutral-200: hsl(240, 10%, 96%);
+  --clr-neutral-300: hsl(240, 10%, 76%);
   --clr-neutral-800: hsl(240, 10%, 16%);
 
   --clr-accent-200: hsl(330, 20%, 92%);
@@ -21,6 +22,7 @@
   --fw-regular: 400;
   --fw-bold: 600;
 
+  --fs-80: 0.8rem;
   --fs-100: 1rem;
   --fs-110: 1.1rem;
   --fs-125: 1.25rem;
@@ -102,6 +104,10 @@ body {
   font-family: var(--ff-neutral);
   color: var(--clr-theme);
   background-color: var(--bg-theme);
+}
+
+a {
+  cursor: pointer;
 }
 
 button {
