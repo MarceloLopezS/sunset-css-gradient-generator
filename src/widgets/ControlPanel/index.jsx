@@ -1,10 +1,10 @@
 import "./ui/styles.css"
-import GeneratedCode from "../../entities/GeneratedCode"
+import ControlPanelHeader from "./ui/ControlPanelHeader"
+import GradientStyleControl from "../../features/GradientStyleControl"
+import GradientDirectionControl from "../../features/GradientDirectionControl"
 import ColorControl from "../../features/ColorControl"
 import OutputFormatControl from "../../features/OutputFormatControl"
-import GradientDirectionControl from "../../features/GradientDirectionControl"
-import GradientStyleControl from "../../features/GradientStyleControl"
-import ControlPanelHeader from "./ui/ControlPanelHeader"
+import ControlPanelOutputCode from "./ui/ControlPanelOutputCode"
 import ControlPanelFooter from "./ui/ControlPanelFooter"
 
 const ControlPanel = () => {
@@ -15,7 +15,7 @@ const ControlPanel = () => {
       <GradientDirectionControl />
       <ColorControl />
       <OutputFormatControl />
-      <GeneratedCode />
+      <ControlPanelOutputCode />
       <ControlPanelFooter />
     </aside>
   )
