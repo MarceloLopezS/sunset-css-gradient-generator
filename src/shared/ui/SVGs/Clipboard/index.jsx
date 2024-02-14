@@ -2,7 +2,7 @@ const ClipboardSVG = ({ classList = [], attributes = {} }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class={
+      className={
         classList.length > 0
           ? classList.reduce((acc, className) => `${acc} ${className}`)
           : null
