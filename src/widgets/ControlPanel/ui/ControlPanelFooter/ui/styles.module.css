@@ -1,0 +1,29 @@
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em 1em;
+  font-size: var(--fs-80);
+  font-weight: var(--fw-bold);
+  margin-block-start: auto;
+}
+
+.contact-info a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
+  outline: 1px solid transparent;
+  transition: color 500ms ease;
+}
+
+.contact-info a:hover,
+.contact-info a:focus-visible {
+  color: var(--accent-theme);
+}
+
+.contact-info a:active {
+  color: var(--clr-theme);
+}
