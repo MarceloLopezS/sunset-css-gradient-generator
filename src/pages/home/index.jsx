@@ -7,7 +7,10 @@ const Home = () => {
   const { theme } = useContext(StoreContext)
 
   return (
-    <main className="main-content | container" data-theme={theme}>
+    <main
+      className="main-content | container transition-bg-500-ease"
+      data-theme={theme}
+    >
       <ControlPanel />
       <GradientDisplay />
     </main>
