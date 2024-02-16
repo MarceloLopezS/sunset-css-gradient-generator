@@ -177,6 +177,10 @@ button {
   margin-block-end: var(--size-50);
 }
 
+.transition-bg-500-ease {
+  transition: background-color 500ms ease;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
