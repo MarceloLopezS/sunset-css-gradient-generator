@@ -120,14 +120,10 @@ button {
 [data-theme="dark"] {
   --clr-theme: var(--clr-theme-dark);
   --bg-theme: var(--bg-theme-dark);
-}
+  --accent-theme: var(--clr-accent-400);
 
-@media (prefers-color-scheme: dark) {
-  body {
-    --clr-theme: var(--clr-theme-dark);
-    --bg-theme: var(--bg-theme-dark);
-    --accent-theme: var(--clr-accent-400);
-  }
+  color: var(--clr-theme);
+  background-color: var(--bg-theme);
 }
 
 .main-content {
