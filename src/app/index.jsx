@@ -1,13 +1,12 @@
 import "./ui/global.css"
-import ControlPanel from "../widgets/ControlPanel"
-import GradientDisplay from "../entities/GradientDisplay"
+import { StoreProvider } from "./model/store"
+import Home from "../pages/home"
 
-function App() {
+const App = () => {
   return (
-    <main className="main-content | container">
-      <ControlPanel />
-      <GradientDisplay />
-    </main>
+    <StoreProvider>
+      <Home />
+    </StoreProvider>
   )
 }
 
