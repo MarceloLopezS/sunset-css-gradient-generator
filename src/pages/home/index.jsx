@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { StoreContext } from "../../app/model/store"
+import { StoreContext } from "../../shared/state/store"
 import ControlPanel from "../../widgets/ControlPanel"
 import GradientDisplay from "../../entities/GradientDisplay"
 
