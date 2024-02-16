@@ -1,5 +1,5 @@
 import "./ui/global.css"
-import { StoreProvider } from "./model/store"
+import { StoreProvider } from "../shared/state/store"
 import Home from "../pages/home"
 
 const App = () => {
