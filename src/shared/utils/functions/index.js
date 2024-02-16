@@ -1,3 +1,5 @@
+import { THEME, DARK, LIGHT, PREFERS_COLOR_SCHEME_DARK } from "../constants"
+
 export const setLocalStorageItem = (key, item) => {
   return localStorage.setItem(key, JSON.stringify(item))
 }
@@ -7,16 +9,11 @@ export const getLocalStorageItem = (key) => {
 }
 
 export const getPreferedColorScheme = () => {
-  const DARK = "dark"
-  const LIGHT = "light"
-  const MEDIA_QUERY = `(prefers-color-scheme: ${DARK})`
-  const THEME = "theme"
-
   const localPreference = getLocalStorageItem(THEME)
 
   if (localPreference) return localPreference
 
-  return window.matchMedia(MEDIA_QUERY).matches
+  return window.matchMedia(PREFERS_COLOR_SCHEME_DARK).matches
     ? DARK
     : LIGHT
 }
