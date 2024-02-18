@@ -1,0 +1,10 @@
+.control-panel--toggler {
+  position: relative;
+  border-radius: 50%;
+  transition: transform 500ms ease;
+}
+
+.control-panel--toggler[data-position="outside-container"] {
+  box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.5);
+  transform: translateX(250%);
+}
