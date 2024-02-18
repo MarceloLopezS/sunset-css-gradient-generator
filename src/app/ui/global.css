@@ -39,6 +39,7 @@
   --size-150: 1.5rem;
   --size-215: 2.15rem;
 
+  --control-panel-min-width: max(18rem, 17vw);
   --control-height: var(--size-215);
 }
 
@@ -126,13 +127,6 @@ button {
   background-color: var(--bg-theme);
 }
 
-.main-content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  min-height: 100dvh;
-}
-
 /* Utility Classes */
 
 .container {
@@ -175,10 +169,6 @@ button {
 
 .margin-block-end-50 {
   margin-block-end: var(--size-50);
-}
-
-.transition-bg-500-ease {
-  transition: background-color 500ms ease;
 }
 
 .visually-hidden {
