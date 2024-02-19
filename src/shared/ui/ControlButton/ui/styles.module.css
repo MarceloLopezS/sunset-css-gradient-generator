@@ -11,6 +11,7 @@
 }
 
 .btn:hover,
-.btn:focus-visible {
+.btn:focus-visible,
+.btn[data-selected] {
   background-color: var(--accent-theme);
 }
