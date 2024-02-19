@@ -4,12 +4,14 @@ import {
   LIGHT,
   SHOWN,
   HIDDEN,
-  TO_LEFT,
-  TO_RIGHT,
   INSIDE_CONTAINER,
   OUTSIDE_CONTAINER
 } from "../../../utils/constants"
-import { TOGGLE_THEME, TOGGLE_PANEL_DISPLAY } from "../../config/actions"
+import {
+  TOGGLE_THEME,
+  TOGGLE_PANEL_DISPLAY,
+  SET_GRADIENT_STYLE
+} from "../../config/actions"
 import { setLocalStorageItem } from "../../../utils/functions";
 
 const rootReducer = (state = {}, action) => {
@@ -27,10 +29,17 @@ const rootReducer = (state = {}, action) => {
         state.panelDisplayToggler.position === INSIDE_CONTAINER
           ? OUTSIDE_CONTAINER
           : INSIDE_CONTAINER
-
-      return {
-        ...state, panelDisplay, panelDisplayToggler: { position }
+      const panelDisplayToggler = {
+        ...state.panelDisplayToggler, position
       }
+
+      return { ...state, panelDisplay, panelDisplayToggler }
+    }
+    case SET_GRADIENT_STYLE: {
+      const style = action.payload.style
+      const gradientOptions = { ...state.gradientOptions, style }
+
+      return { ...state, gradientOptions }
     }
     default: {
       console.error(`Unknown action: ${action.type}`)
