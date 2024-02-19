@@ -1,11 +1,14 @@
 import { getPreferedColorScheme } from "../../utils/functions"
-import { SHOWN, TO_LEFT, INSIDE_CONTAINER } from "../../utils/constants"
+import { SHOWN, INSIDE_CONTAINER } from "../../utils/constants"
 
 const initialState = {
   theme: getPreferedColorScheme(),
   panelDisplay: SHOWN,
   panelDisplayToggler: {
     position: INSIDE_CONTAINER
+  },
+  gradientOptions: {
+    style: "linear"
   }
 }
 
