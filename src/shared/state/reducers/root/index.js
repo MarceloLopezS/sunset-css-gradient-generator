@@ -23,15 +23,13 @@ const rootReducer = (state = {}, action) => {
     }
     case TOGGLE_PANEL_DISPLAY: {
       const panelDisplay = state.panelDisplay === SHOWN ? HIDDEN : SHOWN
-      const direction =
-        state.panelDisplayToggler.direction === TO_LEFT ? TO_RIGHT : TO_LEFT
       const position =
         state.panelDisplayToggler.position === INSIDE_CONTAINER
           ? OUTSIDE_CONTAINER
           : INSIDE_CONTAINER
 
       return {
-        ...state, panelDisplay, panelDisplayToggler: { direction, position }
+        ...state, panelDisplay, panelDisplayToggler: { position }
       }
     }
     default: {
