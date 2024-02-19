@@ -8,6 +8,6 @@
 
 .control-panel--toggler[data-position="outside-container"] {
   background-color: var(--bg-theme);
-  box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.5);
+  box-shadow: 0 0 2px hsla(0, 0%, 0%, 0.5);
   transform: translateX(250%) rotateY(180deg);
 }
