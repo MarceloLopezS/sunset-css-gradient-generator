@@ -5,7 +5,6 @@ const initialState = {
   theme: getPreferedColorScheme(),
   panelDisplay: SHOWN,
   panelDisplayToggler: {
-    direction: TO_LEFT,
     position: INSIDE_CONTAINER
   }
 }
