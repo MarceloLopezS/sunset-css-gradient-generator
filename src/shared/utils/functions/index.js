@@ -17,3 +17,11 @@ export const getPreferedColorScheme = () => {
     ? DARK
     : LIGHT
 }
+
+export const capitalizeString = (string) => {
+  if (typeof string !== "string") {
+    throw new TypeError("String is expected to be capitalized.")
+  }
+
+  return string[0].toUpperCase() + string.substring(1)
+}
