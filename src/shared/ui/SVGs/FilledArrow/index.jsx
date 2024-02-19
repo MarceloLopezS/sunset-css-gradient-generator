@@ -18,19 +18,10 @@ const getRotation = direction => {
   }
 }
 
-const FilledArrowSVG = ({
-  classList = [],
-  attributes = {},
-  direction = TO_TOP
-}) => {
+const FilledArrowSVG = ({ direction = TO_TOP, ...attributes }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={
-        classList.length > 0
-          ? classList.reduce((acc, className) => `${acc} ${className}`)
-          : null
-      }
       width="16"
       height="16"
       viewBox="0 0 24 24"

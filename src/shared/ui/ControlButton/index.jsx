@@ -1,24 +1,12 @@
 import styles from "./ui/styles.module.css"
 
-const ControlButton = ({
-  children,
-  classList = [],
-  selected,
-  ...attributes
-}) => {
+const ControlButton = ({ children, selected, className, ...attributes }) => {
   return (
     <button
       type="button"
-      className={`${
-        classList.length > 0
-          ? classList.reduce(
-              (acc, className) => `${acc} ${className}`,
-              styles.btn
-            )
-          : styles.btn
-      }`}
       data-selected={selected || null}
       {...attributes}
+      className={className != null ? `${styles.btn} ${className}` : styles.btn}
     >
       {children}
     </button>

@@ -1,11 +1,6 @@
-const AboutSVG = ({ classList = [], attributes = {} }) => {
+const AboutSVG = ({ ...attributes }) => {
   return (
     <svg
-      className={
-        classList.length > 0
-          ? classList.reduce((acc, className) => `${acc} ${className}`)
-          : null
-      }
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
