@@ -1,10 +1,13 @@
 .control-panel--toggler {
   position: relative;
   border-radius: 50%;
-  transition: transform 500ms ease;
+  transition-property: transform, background-color;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
 }
 
 .control-panel--toggler[data-position="outside-container"] {
+  background-color: var(--bg-theme);
   box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.5);
-  transform: translateX(250%);
+  transform: translateX(250%) rotateY(180deg);
 }
