@@ -1,12 +1,12 @@
 import { useContext } from "react"
-import { LINEAR, CIRCULAR, CONIC } from "../../shared/utils/constants"
+import { LINEAR, RADIAL, CONIC } from "../../shared/utils/constants"
 import { capitalizeString } from "../../shared/utils/functions"
 import { SET_GRADIENT_STYLE } from "../../shared/state/config/actions"
 import { StoreContext, StoreDispatchContext } from "../../shared/state/store"
 import ButtonGrid from "../../shared/ui/ButtonGrid"
 import ControlButton from "../../shared/ui/ControlButton"
 
-const styleOptions = [LINEAR, CIRCULAR, CONIC]
+const styleOptions = [LINEAR, RADIAL, CONIC]
 
 const GradientStyleControl = () => {
   const { gradientOptions } = useContext(StoreContext)
