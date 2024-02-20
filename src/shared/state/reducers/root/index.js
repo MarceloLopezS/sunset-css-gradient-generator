@@ -5,12 +5,14 @@ import {
   SHOWN,
   HIDDEN,
   INSIDE_CONTAINER,
-  OUTSIDE_CONTAINER
+  OUTSIDE_CONTAINER,
 } from "../../../utils/constants"
 import {
   TOGGLE_THEME,
   TOGGLE_PANEL_DISPLAY,
-  SET_GRADIENT_STYLE
+  SET_GRADIENT_STYLE,
+  SET_LINEAR_DIRECTION,
+  SET_RADIAL_POSITION
 } from "../../config/actions"
 import { setLocalStorageItem } from "../../../utils/functions";
 
@@ -38,6 +40,28 @@ const rootReducer = (state = {}, action) => {
     case SET_GRADIENT_STYLE: {
       const style = action.payload.style
       const gradientOptions = { ...state.gradientOptions, style }
+
+      return { ...state, gradientOptions }
+    }
+    case SET_LINEAR_DIRECTION: {
+      const direction = action.payload.direction
+      const linearParams = {
+        ...state.gradientOptions.linearParams, direction
+      }
+      const gradientOptions = {
+        ...state.gradientOptions, linearParams
+      }
+
+      return { ...state, gradientOptions }
+    }
+    case SET_RADIAL_POSITION: {
+      const position = action.payload.position
+      const radialParams = {
+        ...state.gradientOptions.radialParams, position
+      }
+      const gradientOptions = {
+        ...state.gradientOptions, radialParams
+      }
 
       return { ...state, gradientOptions }
     }
