@@ -1,0 +1,44 @@
+import {
+  TO_LEFT,
+  TO_TOP_LEFT,
+  TO_TOP,
+  TO_TOP_RIGHT,
+  TO_RIGHT,
+  TO_BOTTOM_RIGHT,
+  TO_BOTTOM,
+  TO_BOTTOM_LEFT,
+  EMPTY,
+  LEFT,
+  TOP_LEFT,
+  TOP,
+  TOP_RIGHT,
+  RIGHT,
+  BOTTOM_RIGHT,
+  BOTTOM,
+  BOTTOM_LEFT,
+  CENTER
+} from "../../../shared/utils/constants"
+
+export const LINEAR_DIRECTIONS = [
+  TO_TOP_LEFT,
+  TO_TOP,
+  TO_TOP_RIGHT,
+  TO_LEFT,
+  EMPTY,
+  TO_RIGHT,
+  TO_BOTTOM_LEFT,
+  TO_BOTTOM,
+  TO_BOTTOM_RIGHT
+]
+
+export const RADIAL_POSITIONS = [
+  TOP_LEFT,
+  TOP,
+  TOP_RIGHT,
+  LEFT,
+  CENTER,
+  RIGHT,
+  BOTTOM_LEFT,
+  BOTTOM,
+  BOTTOM_RIGHT
+]

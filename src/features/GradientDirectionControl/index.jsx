@@ -1,49 +1,76 @@
+import { useContext } from "react"
+import { LINEAR_DIRECTIONS, RADIAL_POSITIONS } from "./config/directions"
+import { EMPTY, CENTER, LINEAR } from "../../shared/utils/constants"
+import { StoreContext, StoreDispatchContext } from "../../shared/state/store"
+import {
+  SET_LINEAR_DIRECTION,
+  SET_RADIAL_POSITION
+} from "../../shared/state/config/actions"
 import ButtonGrid from "../../shared/ui/ButtonGrid"
 import ControlButton from "../../shared/ui/ControlButton"
 import NarrowArrowSVG from "../../shared/ui/SVGs/NarrowArrow"
 import NarrowCircleSVG from "../../shared/ui/SVGs/NarrowCircle"
+import NarrowDirectionCircle from "../../shared/ui/SVGs/NarrowDirectionCircle"
 
 const GradientDirectionControl = () => {
+  const { gradientOptions } = useContext(StoreContext)
+  const dispatch = useContext(StoreDispatchContext)
+
+  const dispatchAction = (type, payload) => () => dispatch({ type, payload })
+
   return (
     <section>
       <p className="text-bold margin-block-end-50">Direction</p>
       <ButtonGrid>
-        <ControlButton>
-          <span className="visually-hidden">Top Left</span>
-          <NarrowArrowSVG direction="to-top-left" />
-        </ControlButton>
-        <ControlButton>
-          <span className="visually-hidden">Top</span>
-          <NarrowArrowSVG direction="to-top" />
-        </ControlButton>
-        <ControlButton>
-          <span className="visually-hidden">Top Right</span>
-          <NarrowArrowSVG direction="to-top-right" />
-        </ControlButton>
-        <ControlButton>
-          <span className="visually-hidden">Left</span>
-          <NarrowArrowSVG direction="to-left" />
-        </ControlButton>
-        <ControlButton>
-          <span className="visually-hidden">Center</span>
-          <NarrowCircleSVG />
-        </ControlButton>
-        <ControlButton>
-          <span className="visually-hidden">Right</span>
-          <NarrowArrowSVG direction="to-right" />
-        </ControlButton>
-        <ControlButton>
-          <span className="visually-hidden">Bottom Left</span>
-          <NarrowArrowSVG direction="to-bottom-left" />
-        </ControlButton>
-        <ControlButton>
-          <span className="visually-hidden">Bottom</span>
-          <NarrowArrowSVG direction="to-bottom" />
-        </ControlButton>
-        <ControlButton>
-          <span className="visually-hidden">Bottom Right</span>
-          <NarrowArrowSVG direction="to-bottom-right" />
-        </ControlButton>
+        {gradientOptions.style === LINEAR
+          ? LINEAR_DIRECTIONS.map(direction => {
+              if (direction === EMPTY) return <div key={direction}></div>
+
+              return (
+                <ControlButton
+                  key={direction}
+                  selected={
+                    gradientOptions.linearParams.direction === direction
+                  }
+                  onClick={dispatchAction(SET_LINEAR_DIRECTION, {
+                    direction
+                  })}
+                >
+                  <span className="visually-hidden">{direction}</span>
+                  <NarrowArrowSVG direction={direction} />
+                </ControlButton>
+              )
+            })
+          : RADIAL_POSITIONS.map(position => {
+              if (position === CENTER)
+                return (
+                  <ControlButton
+                    key={position}
+                    selected={
+                      gradientOptions.radialParams.position === position
+                    }
+                    onClick={dispatchAction(SET_RADIAL_POSITION, {
+                      position
+                    })}
+                  >
+                    <span className="visually-hidden">{position}</span>
+                    <NarrowCircleSVG />
+                  </ControlButton>
+                )
+
+              return (
+                <ControlButton
+                  key={position}
+                  selected={gradientOptions.radialParams.position === position}
+                  onClick={dispatchAction(SET_RADIAL_POSITION, {
+                    position
+                  })}
+                >
+                  <span className="visually-hidden">{position}</span>
+                  <NarrowDirectionCircle radialOrigin={position} />
+                </ControlButton>
+              )
+            })}
       </ButtonGrid>
     </section>
   )
