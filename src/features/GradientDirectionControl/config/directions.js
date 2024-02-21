@@ -16,7 +16,15 @@ import {
   BOTTOM_RIGHT,
   BOTTOM,
   BOTTOM_LEFT,
-  CENTER
+  CENTER,
+  DEGREES_0,
+  DEGREES_45,
+  DEGREES_90,
+  DEGREES_135,
+  DEGREES_180,
+  DEGREES_225,
+  DEGREES_270,
+  DEGREES_315
 } from "../../../shared/utils/constants"
 
 export const LINEAR_DIRECTIONS = [
@@ -41,4 +49,16 @@ export const RADIAL_POSITIONS = [
   BOTTOM_LEFT,
   BOTTOM,
   BOTTOM_RIGHT
+]
+
+export const CONIC_START_ANGLES = [
+  DEGREES_315,
+  DEGREES_0,
+  DEGREES_45,
+  DEGREES_270,
+  EMPTY,
+  DEGREES_90,
+  DEGREES_225,
+  DEGREES_180,
+  DEGREES_135
 ]
