@@ -12,7 +12,8 @@ import {
   TOGGLE_PANEL_DISPLAY,
   SET_GRADIENT_STYLE,
   SET_LINEAR_DIRECTION,
-  SET_RADIAL_POSITION
+  SET_RADIAL_POSITION,
+  SET_CONIC_START_ANGLE
 } from "../../config/actions"
 import { setLocalStorageItem } from "../../../utils/functions";
 
@@ -61,6 +62,17 @@ const rootReducer = (state = {}, action) => {
       }
       const gradientOptions = {
         ...state.gradientOptions, radialParams
+      }
+
+      return { ...state, gradientOptions }
+    }
+    case SET_CONIC_START_ANGLE: {
+      const startAngle = action.payload.startAngle
+      const conicParams = {
+        ...state.gradientOptions.conicParams, startAngle
+      }
+      const gradientOptions = {
+        ...state.gradientOptions, conicParams
       }
 
       return { ...state, gradientOptions }
