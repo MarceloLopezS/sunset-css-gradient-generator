@@ -3,9 +3,9 @@ import {
   SHOWN,
   INSIDE_CONTAINER,
   LINEAR,
-  RADIAL,
   TO_TOP_LEFT,
-  CENTER
+  CENTER,
+  DEGREES_0
 } from "../../utils/constants"
 
 const initialState = {
@@ -21,6 +21,9 @@ const initialState = {
     },
     radialParams: {
       position: CENTER
+    },
+    conicParams: {
+      startAngle: DEGREES_0
     }
   }
 }
