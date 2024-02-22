@@ -5,7 +5,9 @@ import {
   LINEAR,
   TO_TOP_LEFT,
   CENTER,
-  DEGREES_0
+  DEGREES_0,
+  RADIAL,
+  CONIC
 } from "../../utils/constants"
 
 const initialState = {
@@ -16,13 +18,13 @@ const initialState = {
   },
   gradientOptions: {
     style: LINEAR,
-    linearParams: {
+    [LINEAR]: {
       direction: TO_TOP_LEFT
     },
-    radialParams: {
+    [RADIAL]: {
       position: CENTER
     },
-    conicParams: {
+    [CONIC]: {
       startAngle: DEGREES_0
     }
   }
