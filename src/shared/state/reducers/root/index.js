@@ -6,6 +6,9 @@ import {
   HIDDEN,
   INSIDE_CONTAINER,
   OUTSIDE_CONTAINER,
+  LINEAR,
+  RADIAL,
+  CONIC,
 } from "../../../utils/constants"
 import {
   TOGGLE_THEME,
@@ -47,10 +50,10 @@ const rootReducer = (state = {}, action) => {
     case SET_LINEAR_DIRECTION: {
       const direction = action.payload.direction
       const linearParams = {
-        ...state.gradientOptions.linearParams, direction
+        ...state.gradientOptions[LINEAR], direction
       }
       const gradientOptions = {
-        ...state.gradientOptions, linearParams
+        ...state.gradientOptions, [LINEAR]: linearParams
       }
 
       return { ...state, gradientOptions }
@@ -58,10 +61,10 @@ const rootReducer = (state = {}, action) => {
     case SET_RADIAL_POSITION: {
       const position = action.payload.position
       const radialParams = {
-        ...state.gradientOptions.radialParams, position
+        ...state.gradientOptions[RADIAL], position
       }
       const gradientOptions = {
-        ...state.gradientOptions, radialParams
+        ...state.gradientOptions, [RADIAL]: radialParams
       }
 
       return { ...state, gradientOptions }
@@ -69,10 +72,10 @@ const rootReducer = (state = {}, action) => {
     case SET_CONIC_START_ANGLE: {
       const startAngle = action.payload.startAngle
       const conicParams = {
-        ...state.gradientOptions.conicParams, startAngle
+        ...state.gradientOptions[CONIC], startAngle
       }
       const gradientOptions = {
-        ...state.gradientOptions, conicParams
+        ...state.gradientOptions, [CONIC]: conicParams
       }
 
       return { ...state, gradientOptions }
