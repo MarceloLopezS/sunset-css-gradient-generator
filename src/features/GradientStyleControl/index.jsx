@@ -18,10 +18,10 @@ const GradientStyleControl = () => {
     <section className="control-panel__styles">
       <p className="text-bold margin-block-end-50">Style</p>
       <ButtonGrid>
-        {styleOptions.map((styleOption, index) => {
+        {styleOptions.map(styleOption => {
           return (
             <ControlButton
-              key={index}
+              key={styleOption}
               selected={gradientOptions.style === styleOption}
               onClick={dispatchAction(SET_GRADIENT_STYLE, {
                 style: styleOption
