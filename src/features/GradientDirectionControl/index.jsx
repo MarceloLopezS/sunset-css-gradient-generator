@@ -3,7 +3,7 @@ import {
   LINEAR_DIRECTIONS,
   RADIAL_POSITIONS,
   CONIC_START_ANGLES
-} from "./config/directions"
+} from "./config/spatialProps"
 import {
   EMPTY,
   CENTER,
@@ -50,9 +50,7 @@ const GradientDirectionControl = () => {
               return (
                 <ControlButton
                   key={direction}
-                  selected={
-                    gradientOptions.linearParams.direction === direction
-                  }
+                  selected={gradientOptions[LINEAR].direction === direction}
                   onClick={dispatchAction(SET_LINEAR_DIRECTION, {
                     direction
                   })}
@@ -68,9 +66,7 @@ const GradientDirectionControl = () => {
                   return (
                     <ControlButton
                       key={position}
-                      selected={
-                        gradientOptions.radialParams.position === position
-                      }
+                      selected={gradientOptions[RADIAL].position === position}
                       onClick={dispatchAction(SET_RADIAL_POSITION, {
                         position
                       })}
@@ -83,9 +79,7 @@ const GradientDirectionControl = () => {
                 return (
                   <ControlButton
                     key={position}
-                    selected={
-                      gradientOptions.radialParams.position === position
-                    }
+                    selected={gradientOptions[RADIAL].position === position}
                     onClick={dispatchAction(SET_RADIAL_POSITION, {
                       position
                     })}
@@ -102,9 +96,7 @@ const GradientDirectionControl = () => {
                 return (
                   <ControlButton
                     key={startAngle}
-                    selected={
-                      gradientOptions.conicParams.startAngle === startAngle
-                    }
+                    selected={gradientOptions[CONIC].startAngle === startAngle}
                     onClick={dispatchAction(SET_CONIC_START_ANGLE, {
                       startAngle
                     })}
