@@ -1,3 +1,4 @@
+import { POSITION, SHAPE, SIZE } from "../../../utils/constants"
 import {
   TOGGLE_THEME,
   TOGGLE_PANEL_DISPLAY,
@@ -5,16 +6,16 @@ import {
   SET_LINEAR_DIRECTION,
   SET_RADIAL_POSITION,
   SET_CONIC_START_ANGLE,
-  SET_RADIAL_SHAPE
+  SET_RADIAL_SHAPE,
+  SET_RADIAL_SIZE
 } from "../../config/actions"
 import {
   toggleTheme,
   togglePanelDisplay,
   setGradientStyle,
   setLinearDirection,
-  setRadialPosition,
-  setConicStartAngle,
-  setRadialShape
+  setRadialProp,
+  setConicStartAngle
 } from "../../model/actionHandlers"
 
 const rootReducer = (state = {}, action) => {
@@ -28,9 +29,11 @@ const rootReducer = (state = {}, action) => {
     case SET_LINEAR_DIRECTION:
       return setLinearDirection(state, action)
     case SET_RADIAL_POSITION:
-      return setRadialPosition(state, action)
+      return setRadialProp(POSITION, state, action)
     case SET_RADIAL_SHAPE:
-      return setRadialShape(state, action)
+      return setRadialProp(SHAPE, state, action)
+    case SET_RADIAL_SIZE:
+      return setRadialProp(SIZE, state, action)
     case SET_CONIC_START_ANGLE:
       return setConicStartAngle(state, action)
     default: {

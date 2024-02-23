@@ -52,22 +52,10 @@ export const setLinearDirection = (state, action) => {
   return { ...state, gradientOptions }
 }
 
-export const setRadialPosition = (state, action) => {
-  const position = action.payload.position
+export const setRadialProp = (radialProp, state, action) => {
+  const payload = action.payload[radialProp];
   const radialParams = {
-    ...state.gradientOptions[RADIAL], position
-  }
-  const gradientOptions = {
-    ...state.gradientOptions, [RADIAL]: radialParams
-  }
-
-  return { ...state, gradientOptions }
-}
-
-export const setRadialShape = (state, action) => {
-  const shape = action.payload.shape;
-  const radialParams = {
-    ...state.gradientOptions[RADIAL], shape
+    ...state.gradientOptions[RADIAL], [radialProp]: payload
   }
   const gradientOptions = {
     ...state.gradientOptions, [RADIAL]: radialParams
