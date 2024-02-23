@@ -4,7 +4,7 @@
   height: var(--control-height);
   color: var(--clr-theme);
   background-color: transparent;
-  border: 2px solid var(--accent-theme);
+  border: var(--control-border);
   border-radius: 0.35em;
   outline: 1px solid transparent;
   transition: background-color 500ms ease;
