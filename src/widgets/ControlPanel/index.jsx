@@ -10,6 +10,7 @@ import OutputFormatControl from "../../features/OutputFormatControl"
 import ControlPanelOutputCode from "./ui/ControlPanelOutputCode"
 import ControlPanelFooter from "./ui/ControlPanelFooter"
 import GradientRadialShapeControl from "../../features/GradientRadialShapeControl"
+import GradientRadialSizeControl from "../../features/GradientRadialSizeControl"
 
 const ControlPanel = () => {
   const { panelDisplay, gradientOptions } = useContext(StoreContext)
@@ -19,7 +20,8 @@ const ControlPanel = () => {
       <ControlPanelHeader />
       <GradientStyleControl />
       <GradientDirectionControl />
-      {gradientOptions.style === RADIAL ? <GradientRadialShapeControl /> : null}
+      {gradientOptions.style === RADIAL && <GradientRadialShapeControl />}
+      {gradientOptions.style === RADIAL && <GradientRadialSizeControl />}
       <ColorControl />
       <OutputFormatControl />
       <ControlPanelOutputCode />
