@@ -22,25 +22,68 @@
   --fw-regular: 400;
   --fw-bold: 600;
 
+  --fs-60: 0.6rem;
+  --fs-70: 0.7rem;
   --fs-80: 0.8rem;
+  --fs-90: 0.9rem;
   --fs-100: 1rem;
   --fs-110: 1.1rem;
   --fs-125: 1.25rem;
   --fs-150: 1.5rem;
+  --fs-175: 1.75rem;
 
-  --fs-title: clamp(var(--fs-125), 1.5vw, var(--fs-150));
+  --fs-body: var(--fs-90);
+  --fs-title: var(--fs-150);
+  --fs-footer: var(--fs-80);
 
+  --size-15: 0.15rem;
   --size-20: 0.2rem;
   --size-25: 0.25rem;
+  --size-35: 0.35rem;
   --size-50: 0.5rem;
+  --size-75: 0.75rem;
   --size-95: 0.95rem;
   --size-100: 1rem;
   --size-125: 1.25rem;
   --size-150: 1.5rem;
+  --size-185: 1.85rem;
+  --size-200: 2rem;
   --size-215: 2.15rem;
 
-  --control-panel-min-width: max(18rem, 17vw);
-  --control-height: var(--size-215);
+  --control-panel-min-width: max(18rem, 17.5vw);
+  --control-height: var(--size-185);
+  --control-border: 2px solid var(--accent-theme);
+  --control-gap: var(--size-50);
+}
+
+@media (min-width: 45rem) {
+  :root {
+    --fs-body: var(--fs-110);
+    --fs-title: var(--fs-175);
+    --fs-footer: var(--fs-80);
+
+    --control-height: var(--size-215);
+    --control-border: 2px solid var(--accent-theme);
+  }
+}
+
+@media (min-width: 60rem) {
+  :root {
+    --fs-body: clamp(var(--fs-70), 0.82vw, var(--fs-100));
+    --fs-title: clamp(var(--fs-100), 1.25vw, var(--fs-150));
+    --fs-footer: clamp(var(--fs-60), 0.7vw, var(--fs-90));
+
+    --control-height: clamp(var(--size-150), 3.1vh, var(--size-185));
+    --control-border: 1px solid var(--accent-theme);
+    --control-gap: clamp(var(--size-15), 0.2vw, var(--size-35));
+  }
+}
+
+@media (min-width: 100rem) {
+  :root {
+    --control-border: 2px solid var(--accent-theme);
+    --control-gap: var(--size-35);
+  }
 }
 
 /* CSS Reset */
@@ -103,6 +146,7 @@ picture {
 
 body {
   font-family: var(--ff-neutral);
+  font-size: var(--fs-body);
   color: var(--clr-theme);
   background-color: var(--bg-theme);
 }
@@ -168,7 +212,7 @@ button {
 }
 
 .margin-block-end-50 {
-  margin-block-end: var(--size-50);
+  margin-block-end: 0.35em;
 }
 
 .visually-hidden {
