@@ -4,7 +4,7 @@
   position: relative;
   height: calc(var(--control-height) * 2);
   padding: var(--padding);
-  border: 2px solid var(--accent-theme);
+  border: var(--control-border);
   border-radius: 0.25em;
 }
 
