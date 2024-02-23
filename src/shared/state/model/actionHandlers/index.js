@@ -64,6 +64,18 @@ export const setRadialPosition = (state, action) => {
   return { ...state, gradientOptions }
 }
 
+export const setRadialShape = (state, action) => {
+  const shape = action.payload.shape;
+  const radialParams = {
+    ...state.gradientOptions[RADIAL], shape
+  }
+  const gradientOptions = {
+    ...state.gradientOptions, [RADIAL]: radialParams
+  }
+
+  return { ...state, gradientOptions }
+}
+
 export const setConicStartAngle = (state, action) => {
   const startAngle = action.payload.startAngle
   const conicParams = {
