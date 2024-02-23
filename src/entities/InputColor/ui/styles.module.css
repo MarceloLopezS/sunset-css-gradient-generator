@@ -19,7 +19,7 @@
 
 .input[type="color"] {
   padding: var(--size-20) var(--size-95);
-  border: 2px solid var(--accent-theme);
+  border: var(--control-border);
   border-radius: 0.25em;
   outline: 1px solid transparent;
   cursor: pointer;
@@ -43,7 +43,7 @@
   align-items: center;
   gap: 0.1em;
   padding-inline: 1.25em;
-  border: 2px solid var(--accent-theme);
+  border: var(--control-border);
   border-radius: 0.25em;
   transition: border-color 500ms ease;
 }
