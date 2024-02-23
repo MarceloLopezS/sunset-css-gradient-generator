@@ -8,7 +8,8 @@ import {
   DEGREES_0,
   RADIAL,
   CONIC,
-  CIRCLE
+  CIRCLE,
+  FARTHEST_CORNER
 } from "../../utils/constants"
 
 const initialState = {
@@ -24,6 +25,7 @@ const initialState = {
     },
     [RADIAL]: {
       shape: CIRCLE,
+      size: FARTHEST_CORNER,
       position: CENTER
     },
     [CONIC]: {
