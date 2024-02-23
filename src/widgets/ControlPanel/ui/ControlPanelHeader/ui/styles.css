@@ -1,11 +1,11 @@
 .control-panel__header {
-  padding-block-end: var(--size-50);
+  padding-block-end: var(--size-35);
 }
 
 .control-panel__togglers-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-block-end: var(--size-100);
+  margin-block-end: var(--size-75);
 }
 
 .control-panel__title {

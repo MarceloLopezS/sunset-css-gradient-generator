@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.5em 1em;
-  font-size: var(--fs-80);
+  font-size: var(--fs-footer);
   font-weight: var(--fw-bold);
   margin-block-start: auto;
 }
