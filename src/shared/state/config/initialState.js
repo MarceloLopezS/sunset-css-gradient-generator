@@ -7,7 +7,8 @@ import {
   CENTER,
   DEGREES_0,
   RADIAL,
-  CONIC
+  CONIC,
+  CIRCLE
 } from "../../utils/constants"
 
 const initialState = {
@@ -22,6 +23,7 @@ const initialState = {
       direction: TO_TOP_LEFT
     },
     [RADIAL]: {
+      shape: CIRCLE,
       position: CENTER
     },
     [CONIC]: {
