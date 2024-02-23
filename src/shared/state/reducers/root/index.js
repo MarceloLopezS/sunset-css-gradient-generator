@@ -4,7 +4,8 @@ import {
   SET_GRADIENT_STYLE,
   SET_LINEAR_DIRECTION,
   SET_RADIAL_POSITION,
-  SET_CONIC_START_ANGLE
+  SET_CONIC_START_ANGLE,
+  SET_RADIAL_SHAPE
 } from "../../config/actions"
 import {
   toggleTheme,
@@ -12,7 +13,8 @@ import {
   setGradientStyle,
   setLinearDirection,
   setRadialPosition,
-  setConicStartAngle
+  setConicStartAngle,
+  setRadialShape
 } from "../../model/actionHandlers"
 
 const rootReducer = (state = {}, action) => {
@@ -27,6 +29,8 @@ const rootReducer = (state = {}, action) => {
       return setLinearDirection(state, action)
     case SET_RADIAL_POSITION:
       return setRadialPosition(state, action)
+    case SET_RADIAL_SHAPE:
+      return setRadialShape(state, action)
     case SET_CONIC_START_ANGLE:
       return setConicStartAngle(state, action)
     default: {
