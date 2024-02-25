@@ -75,3 +75,16 @@ export const setConicStartAngle = (state, action) => {
 
   return { ...state, gradientOptions }
 }
+
+export const setGradientColor = (state, action) => {
+  const { id, value, stop } = action.payload
+  const modifiedColor = { id, value, stop }
+  const unChangedColors = state.gradientOptions.colors
+    .filter(color => color.id !== id)
+  const colors = [modifiedColor, ...unChangedColors].sort((a, b) => a.id - b.id)
+  const gradientOptions = {
+    ...state.gradientOptions, colors
+  }
+
+  return { ...state, gradientOptions }
+}
