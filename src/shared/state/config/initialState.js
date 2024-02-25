@@ -20,6 +20,10 @@ const initialState = {
   },
   gradientOptions: {
     style: LINEAR,
+    colors: [
+      { id: 1, value: "#e6890f", stop: null },
+      { id: 2, value: "#277aa0", stop: null }
+    ],
     [LINEAR]: {
       direction: TO_TOP_LEFT
     },
