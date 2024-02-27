@@ -9,7 +9,8 @@ import {
   RADIAL,
   CONIC,
   CIRCLE,
-  FARTHEST_CORNER
+  FARTHEST_CORNER,
+  HEX
 } from "../../utils/constants"
 
 const initialState = {
@@ -20,10 +21,6 @@ const initialState = {
   },
   gradientOptions: {
     style: LINEAR,
-    colors: [
-      { id: 1, value: "#e6890f", stop: null },
-      { id: 2, value: "#277aa0", stop: null }
-    ],
     [LINEAR]: {
       direction: BOTTOM_RIGHT
     },
@@ -35,7 +32,12 @@ const initialState = {
     [CONIC]: {
       startAngle: DEGREES_0,
       position: CENTER
-    }
+    },
+    colors: [
+      { id: 1, value: "#e6890f", stop: null },
+      { id: 2, value: "#277aa0", stop: null }
+    ],
+    colorFormat: HEX
   }
 }
 
