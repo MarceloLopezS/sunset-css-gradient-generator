@@ -2,10 +2,22 @@
   --padding: var(--size-25);
 
   position: relative;
-  height: calc(var(--control-height) * 2);
+  height: calc(var(--control-height) * 1.8);
   padding: var(--padding);
   border: var(--control-border);
   border-radius: 0.25em;
+}
+
+.code-container code {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-wrap: nowrap;
+  color: var(--clr-code);
+  padding-inline: var(--size-25);
+  overflow: scroll hidden;
+  scrollbar-color: var(--accent-theme) transparent;
+  scrollbar-width: thin;
 }
 
 .copy-to-clipboard {
@@ -14,6 +26,8 @@
   right: var(--padding);
   width: var(--size-100);
   color: var(--accent-theme);
+  background-color: var(--bg-theme);
+  z-index: 10;
   transition: color 500ms ease;
 }
 
