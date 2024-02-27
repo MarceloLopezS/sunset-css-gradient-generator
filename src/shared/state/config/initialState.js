@@ -35,7 +35,7 @@ const initialState = {
     },
     colors: [
       { id: 1, value: "#e6890f", stop: null },
-      { id: 2, value: "#277aa0", stop: null }
+      { id: 2, value: "#0c75a6", stop: null }
     ],
     colorFormat: HEX
   }
