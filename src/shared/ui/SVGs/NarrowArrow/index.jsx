@@ -1,11 +1,11 @@
-const TO_LEFT = "to-left"
-const TO_TOP_LEFT = "to-top-left"
-const TO_TOP = "to-top"
-const TO_TOP_RIGHT = "to-top-right"
-const TO_RIGHT = "to-right"
-const TO_BOTTOM_RIGHT = "to-bottom-right"
-const TO_BOTTOM = "to-bottom"
-const TO_BOTTOM_LEFT = "to-bottom-left"
+const TO_LEFT = "to left"
+const TO_TOP_LEFT = "to top left"
+const TO_TOP = "to top"
+const TO_TOP_RIGHT = "to top right"
+const TO_RIGHT = "to right"
+const TO_BOTTOM_RIGHT = "to bottom right"
+const TO_BOTTOM = "to bottom"
+const TO_BOTTOM_LEFT = "to bottom left"
 
 const getRotation = direction => {
   switch (direction) {

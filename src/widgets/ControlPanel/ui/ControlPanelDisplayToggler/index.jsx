@@ -4,7 +4,7 @@ import {
   StoreDispatchContext
 } from "../../../../shared/state/store"
 import { TOGGLE_PANEL_DISPLAY } from "../../../../shared/state/config/actions"
-import { TO_LEFT } from "../../../../shared/utils/constants"
+import { LEFT } from "../../../../shared/utils/constants"
 import FilledArrowSVG from "../../../../shared/ui/SVGs/FilledArrow"
 import styles from "./ui/styles.module.css"
 
@@ -27,7 +27,7 @@ const ControlPanelDisplayToggler = () => {
       onClick={dispatchAction}
     >
       <span className="visually-hidden">Toggle Panel Display</span>
-      <FilledArrowSVG direction={TO_LEFT} />
+      <FilledArrowSVG direction={`to ${LEFT}`} />
     </button>
   )
 }

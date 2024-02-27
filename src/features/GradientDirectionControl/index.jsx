@@ -56,7 +56,7 @@ const GradientDirectionControl = () => {
                   })}
                 >
                   <span className="visually-hidden">{direction}</span>
-                  <NarrowArrowSVG direction={direction} />
+                  <NarrowArrowSVG direction={`to ${direction}`} />
                 </ControlButton>
               )
             })

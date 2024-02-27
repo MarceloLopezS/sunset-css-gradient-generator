@@ -1,7 +1,7 @@
-const TO_LEFT = "to-left"
-const TO_TOP = "to-top"
-const TO_RIGHT = "to-right"
-const TO_BOTTOM = "to-bottom"
+const TO_LEFT = "to left"
+const TO_TOP = "to top"
+const TO_RIGHT = "to right"
+const TO_BOTTOM = "to bottom"
 
 const getRotation = direction => {
   switch (direction) {
