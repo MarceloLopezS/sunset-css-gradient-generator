@@ -1,4 +1,8 @@
-import { THEME, DARK, LIGHT, PREFERS_COLOR_SCHEME_DARK } from "../constants"
+import { THEME, DARK, LIGHT, PREFERS_COLOR_SCHEME_DARK, CONIC, RADIAL, LINEAR } from "../constants"
+
+export const pipe = (...fns) => (value) => {
+  return fns.reduce((acc, fn) => fn(acc), value)
+}
 
 export const setLocalStorageItem = (key, item) => {
   return localStorage.setItem(key, JSON.stringify(item))
@@ -37,4 +41,71 @@ export const toSpaceSeparated = (string, currentSeparator) => {
   }
 
   return string.split(currentSeparator).join(" ")
+}
+
+export const setGradientStyle = gradientOptions => () => {
+  const { style } = gradientOptions
+  if (
+    style !== RADIAL && style !== CONIC && style !== LINEAR
+  ) return gradientString
+
+  return `${style}-gradient`
+}
+
+export const appendString = string => gradientString => {
+  return `${gradientString}${string}`
+}
+
+export const appendConicStartAngle = gradientOptions => gradientString => {
+  const { style } = gradientOptions
+  if (style !== CONIC) return gradientString
+
+  return `${gradientString}from ${gradientOptions[style].startAngle}`
+}
+
+export const appendRadialShape = gradientOptions => gradientString => {
+  const { style } = gradientOptions
+  if (style !== RADIAL) return gradientString
+
+  return `${gradientString}${gradientOptions[style].shape}`
+}
+
+export const appendRadialSize = gradientOptions => gradientString => {
+  const { style } = gradientOptions
+  if (style !== RADIAL) return gradientString
+
+  return `${gradientString} ${gradientOptions[style].size}`
+}
+
+export const appendGradientPosition = gradientOptions => gradientString => {
+  const { style } = gradientOptions
+  if (style !== RADIAL && style !== CONIC) return gradientString
+
+  return `${gradientString} at ${gradientOptions[style].position}`
+}
+
+export const appendLinearDirection = gradientOptions => gradientString => {
+  const { style } = gradientOptions
+  if (style !== LINEAR) return gradientString
+
+  return `${gradientString}to ${gradientOptions[style].direction}`
+}
+
+export const appendGradientColors = gradientOptions => gradientString => {
+  const { style, colors } = gradientOptions
+
+  return gradientString + colors.reduce((acc, color, index) => {
+    const { value, stop } = color
+    if (index === 0)
+      return (
+        value + (stop == null ? "" : ` ${stop}${style === CONIC ? "deg" : "%"}`)
+      )
+
+    return (
+      acc +
+      ", " +
+      value +
+      (stop == null ? "" : ` ${stop}${style === CONIC ? "deg" : "%"}`)
+    )
+  }, "")
 }
