@@ -88,3 +88,12 @@ export const setGradientColor = (state, action) => {
 
   return { ...state, gradientOptions }
 }
+
+export const setColorFormat = (state, action) => {
+  const { colorFormat } = action.payload
+  const gradientOptions = {
+    ...state.gradientOptions, colorFormat
+  }
+
+  return { ...state, gradientOptions }
+}
