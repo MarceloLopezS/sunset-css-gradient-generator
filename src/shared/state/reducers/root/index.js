@@ -8,7 +8,8 @@ import {
   SET_CONIC_START_ANGLE,
   SET_RADIAL_SHAPE,
   SET_RADIAL_SIZE,
-  SET_GRADIENT_COLOR
+  SET_GRADIENT_COLOR,
+  SET_COLOR_FORMAT
 } from "../../config/actions"
 import {
   toggleTheme,
@@ -17,7 +18,8 @@ import {
   setLinearDirection,
   setRadialProp,
   setConicStartAngle,
-  setGradientColor
+  setGradientColor,
+  setColorFormat
 } from "../../model/actionHandlers"
 
 const rootReducer = (state = {}, action) => {
@@ -40,6 +42,8 @@ const rootReducer = (state = {}, action) => {
       return setConicStartAngle(state, action)
     case SET_GRADIENT_COLOR:
       return setGradientColor(state, action)
+    case SET_COLOR_FORMAT:
+      return setColorFormat(state, action)
     default: {
       console.error(`Unknown action: ${action.type}`)
       return state
