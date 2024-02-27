@@ -3,7 +3,7 @@ import {
   SHOWN,
   INSIDE_CONTAINER,
   LINEAR,
-  TO_TOP_LEFT,
+  BOTTOM_RIGHT,
   CENTER,
   DEGREES_0,
   RADIAL,
@@ -25,7 +25,7 @@ const initialState = {
       { id: 2, value: "#277aa0", stop: null }
     ],
     [LINEAR]: {
-      direction: TO_TOP_LEFT
+      direction: BOTTOM_RIGHT
     },
     [RADIAL]: {
       shape: CIRCLE,
@@ -33,7 +33,8 @@ const initialState = {
       position: CENTER
     },
     [CONIC]: {
-      startAngle: DEGREES_0
+      startAngle: DEGREES_0,
+      position: CENTER
     }
   }
 }
