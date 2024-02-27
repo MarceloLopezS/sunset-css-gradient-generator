@@ -1,6 +1,7 @@
 :root {
   --clr-neutral-200: hsl(240, 10%, 96%);
   --clr-neutral-300: hsl(240, 10%, 76%);
+  --clr-neutral-700: hsl(240, 10%, 26%);
   --clr-neutral-800: hsl(240, 10%, 16%);
 
   --clr-accent-200: hsl(330, 20%, 92%);
@@ -15,8 +16,10 @@
   --clr-theme: var(--clr-theme-light);
   --bg-theme: var(--bg-theme-light);
   --accent-theme: var(--clr-accent-400);
+  --clr-code: var(--clr-neutral-700);
 
-  --ff-neutral: system-ui, -apple-system, sans-serif;
+  --ff-primary: system-ui, -apple-system, sans-serif;
+  --ff-code: monospace;
 
   --fw-light: 300;
   --fw-regular: 400;
@@ -145,7 +148,7 @@ picture {
 /* Main Styles */
 
 body {
-  font-family: var(--ff-neutral);
+  font-family: var(--ff-primary);
   font-size: var(--fs-body);
   color: var(--clr-theme);
   background-color: var(--bg-theme);
@@ -162,10 +165,35 @@ button {
   outline: 1px solid transparent;
 }
 
+code {
+  font-family: var(--ff-code);
+}
+
+::-webkit-scrollbar {
+  width: var(--size-25);
+  height: var(--size-25);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-theme);
+  border-radius: var(--size-20);
+}
+
+@media (hover: hover) {
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-theme);
+  }
+}
+
 [data-theme="dark"] {
   --clr-theme: var(--clr-theme-dark);
   --bg-theme: var(--bg-theme-dark);
   --accent-theme: var(--clr-accent-400);
+  --clr-code: var(--clr-neutral-300);
 
   color: var(--clr-theme);
   background-color: var(--bg-theme);
