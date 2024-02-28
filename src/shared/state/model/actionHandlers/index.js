@@ -10,7 +10,7 @@ import {
   RADIAL,
   CONIC
 } from "../../../utils/constants"
-import { setLocalStorageItem } from "../../../utils/functions"
+import { getRandomHexColor, setLocalStorageItem } from "../../../utils/functions"
 
 export const toggleTheme = (state) => {
   const theme = state.theme === DARK ? LIGHT : DARK
@@ -93,6 +93,18 @@ export const setColorFormat = (state, action) => {
   const { colorFormat } = action.payload
   const gradientOptions = {
     ...state.gradientOptions, colorFormat
+  }
+
+  return { ...state, gradientOptions }
+}
+
+export const randomizeColorValues = (state) => {
+  const { colors } = state.gradientOptions
+  const newColors = colors.map(color => (
+    { ...color, value: getRandomHexColor() }
+  ))
+  const gradientOptions = {
+    ...state.gradientOptions, colors: newColors
   }
 
   return { ...state, gradientOptions }
