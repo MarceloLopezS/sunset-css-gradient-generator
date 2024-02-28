@@ -1,11 +1,11 @@
 const LEFT = "left"
-const TOP_LEFT = "top-left"
+const TOP_LEFT = "top left"
 const TOP = "top"
-const TOP_RIGHT = "top-right"
+const TOP_RIGHT = "top right"
 const RIGHT = "right"
-const BOTTOM_RIGHT = "bottom-right"
+const BOTTOM_RIGHT = "bottom right"
 const BOTTOM = "bottom"
-const BOTTOM_LEFT = "bottom-left"
+const BOTTOM_LEFT = "bottom left"
 
 const getRadialDirection = radialOrigin => {
   switch (radialOrigin) {
