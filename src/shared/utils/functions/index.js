@@ -227,3 +227,14 @@ export const appendGradientColors = gradientOptions => gradientString => {
     )
   }, "")
 }
+
+const getRandomHexColorComponent = () => {
+  const hex = (Math.round(Math.random() * 255)).toString(16)
+
+  return hex.length === 1 ? "0" + hex : hex
+}
+
+export const getRandomHexColor = () => {
+  return "#" + getRandomHexColorComponent() + getRandomHexColorComponent()
+    + getRandomHexColorComponent()
+}
