@@ -4,7 +4,7 @@ import { RADIAL } from "../../shared/utils/constants"
 import styles from "./ui/styles.module.css"
 import ControlPanelHeader from "./ui/ControlPanelHeader"
 import GradientStyleControl from "../../features/GradientStyleControl"
-import GradientDirectionControl from "../../features/GradientDirectionControl"
+import GradientSpatialPropControl from "../../features/GradientSpatialPropControl"
 import ColorControl from "../../features/ColorControl"
 import OutputFormatControl from "../../features/OutputFormatControl"
 import ControlPanelOutputCode from "./ui/ControlPanelOutputCode"
@@ -19,7 +19,7 @@ const ControlPanel = () => {
     <aside className={styles["control-panel"]} data-display={panelDisplay}>
       <ControlPanelHeader />
       <GradientStyleControl />
-      <GradientDirectionControl />
+      <GradientSpatialPropControl />
       {gradientOptions.style === RADIAL && <GradientRadialShapeControl />}
       {gradientOptions.style === RADIAL && <GradientRadialSizeControl />}
       <ColorControl />
