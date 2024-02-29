@@ -4,8 +4,8 @@
   grid-template-columns: 100vw 0vw;
   min-height: 100dvh;
   transition-property: grid, background-color;
-  transition-duration: 500ms;
-  transition-timing-function: ease;
+  transition-duration: var(--default-animation-duration);
+  transition-timing-function: var(--default-animation-timing-function);
   overflow: hidden;
 }
 
