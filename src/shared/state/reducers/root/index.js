@@ -17,14 +17,16 @@ import {
   togglePanelDisplay,
   setGradientStyle,
   setLinearDirection,
-  setRadialProp,
+  setRadialShape,
+  setRadialSize,
+  setRadialPosition,
   setConicStartAngle,
   setGradientColor,
   setColorFormat,
   randomizeColorValues
 } from "../../model/actionHandlers"
 
-const rootReducer = (state = {}, action) => {
+const rootReducer = (state, action) => {
   switch (action.type) {
     case TOGGLE_THEME:
       return toggleTheme(state)
@@ -35,11 +37,11 @@ const rootReducer = (state = {}, action) => {
     case SET_LINEAR_DIRECTION:
       return setLinearDirection(state, action)
     case SET_RADIAL_POSITION:
-      return setRadialProp(POSITION, state, action)
+      return setRadialPosition(state, action)
     case SET_RADIAL_SHAPE:
-      return setRadialProp(SHAPE, state, action)
+      return setRadialShape(state, action)
     case SET_RADIAL_SIZE:
-      return setRadialProp(SIZE, state, action)
+      return setRadialSize(state, action)
     case SET_CONIC_START_ANGLE:
       return setConicStartAngle(state, action)
     case SET_GRADIENT_COLOR:

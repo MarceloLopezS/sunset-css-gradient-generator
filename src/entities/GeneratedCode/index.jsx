@@ -1,5 +1,5 @@
-import { useRef, useContext } from "react"
-import { StoreContext } from "../../shared/state/store"
+import { useRef } from "react"
+import { useStoreData } from "../../shared/state/store"
 import ClipboardSVG from "../../shared/ui/SVGs/Clipboard"
 import {
   pipe,
@@ -17,17 +17,17 @@ import styles from "./ui/styles.module.css"
 
 const GeneratedCode = () => {
   const codeRef = useRef(null)
-  const { gradientOptions } = useContext(StoreContext)
+  const store = useStoreData(state => state)
   const generateGradient = pipe(
-    setGradientStyle(gradientOptions),
+    setGradientStyle(store),
     appendString("("),
-    appendConicStartAngle(gradientOptions),
-    appendRadialShape(gradientOptions),
-    appendRadialSize(gradientOptions),
-    appendGradientPosition(gradientOptions),
-    appendLinearDirection(gradientOptions),
+    appendConicStartAngle(store),
+    appendRadialShape(store),
+    appendRadialSize(store),
+    appendGradientPosition(store),
+    appendLinearDirection(store),
     appendString(", "),
-    appendGradientColors(gradientOptions),
+    appendGradientColors(store),
     appendString(")")
   )
 

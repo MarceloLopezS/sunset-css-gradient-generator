@@ -1,18 +1,7 @@
-import { createContext, useReducer } from "react"
+import { create } from "zustand"
 import rootReducer from "../reducers/root"
 import initialState from "../config/initialState"
 
-export const StoreContext = createContext(null)
-export const StoreDispatchContext = createContext(null)
-
-export const StoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(rootReducer, initialState)
-
-  return (
-    <StoreContext.Provider value={state}>
-      <StoreDispatchContext.Provider value={dispatch}>
-        {children}
-      </StoreDispatchContext.Provider>
-    </StoreContext.Provider>
-  )
-}
+export const useStoreData = create(() => initialState)
+export const dispatch = action =>
+  useStoreData.setState(state => rootReducer(state, action))

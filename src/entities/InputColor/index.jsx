@@ -1,6 +1,5 @@
 import { useRef } from "react"
-import { useContext } from "react"
-import { StoreDispatchContext } from "../../shared/state/store"
+import { dispatch } from "../../shared/state/store"
 import { SET_GRADIENT_COLOR } from "../../shared/state/config/actions"
 import { CONIC } from "../../shared/utils/constants"
 import styles from "./ui/styles.module.css"
@@ -15,7 +14,6 @@ const validateStopInput = value => {
 const InputColor = ({ colorId, colorValue, colorStop, colorStyle }) => {
   const colorRef = useRef(null)
   const stopRef = useRef(null)
-  const dispatch = useContext(StoreDispatchContext)
   const dispatchAction = (type, colorId) => () =>
     dispatch({
       type,

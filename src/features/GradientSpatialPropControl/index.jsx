@@ -1,6 +1,5 @@
-import { useContext } from "react"
+import { useStoreData, dispatch } from "../../shared/state/store"
 import { LINEAR, RADIAL, CONIC } from "../../shared/utils/constants"
-import { StoreContext, StoreDispatchContext } from "../../shared/state/store"
 import ButtonGrid from "../../shared/ui/ButtonGrid"
 import ButtonsLinearGradient from "./ui/ButtonsLinearGradient"
 import ButtonsRadialGradient from "./ui/ButtonsRadialGradient"
@@ -14,31 +13,30 @@ const setTitle = gradientStyle => {
 }
 
 const GradientDirectionControl = () => {
-  const { gradientOptions } = useContext(StoreContext)
-  const dispatch = useContext(StoreDispatchContext)
-
+  const style = useStoreData(state => state.gradientStyle)
+  const direction = useStoreData(state => state.linearDirection)
+  const position = useStoreData(state => state.radialPosition)
+  const startAngle = useStoreData(state => state.conicStartAngle)
   const dispatchAction = (type, payload) => () => dispatch({ type, payload })
 
   return (
     <section>
-      <p className="text-bold margin-block-end-50">
-        {setTitle(gradientOptions.style)}
-      </p>
+      <p className="text-bold margin-block-end-50">{setTitle(style)}</p>
       <ButtonGrid>
-        {gradientOptions.style === LINEAR ? (
+        {style === LINEAR ? (
           <ButtonsLinearGradient
-            currentDirection={gradientOptions[LINEAR].direction}
+            currentDirection={direction}
             dispatcher={dispatchAction}
           />
-        ) : gradientOptions.style === RADIAL ? (
+        ) : style === RADIAL ? (
           <ButtonsRadialGradient
-            currentPosition={gradientOptions[RADIAL].position}
+            currentPosition={position}
             dispatcher={dispatchAction}
           />
         ) : (
-          gradientOptions.style === CONIC && (
+          style === CONIC && (
             <ButtonsConicGradient
-              currentStartAngle={gradientOptions[CONIC].startAngle}
+              currentStartAngle={startAngle}
               dispatcher={dispatchAction}
             />
           )

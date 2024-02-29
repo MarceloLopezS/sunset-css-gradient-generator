@@ -1,5 +1,4 @@
-import { useContext } from "react"
-import { StoreContext } from "../../shared/state/store"
+import { useStoreData } from "../../shared/state/store"
 import { RADIAL } from "../../shared/utils/constants"
 import styles from "./ui/styles.module.css"
 import ControlPanelHeader from "./ui/ControlPanelHeader"
@@ -13,15 +12,16 @@ import GradientRadialShapeControl from "../../features/GradientRadialShapeContro
 import GradientRadialSizeControl from "../../features/GradientRadialSizeControl"
 
 const ControlPanel = () => {
-  const { panelDisplay, gradientOptions } = useContext(StoreContext)
+  const panelDisplay = useStoreData(state => state.panelDisplay)
+  const style = useStoreData(state => state.gradientStyle)
 
   return (
     <aside className={styles["control-panel"]} data-display={panelDisplay}>
       <ControlPanelHeader />
       <GradientStyleControl />
       <GradientSpatialPropControl />
-      {gradientOptions.style === RADIAL && <GradientRadialShapeControl />}
-      {gradientOptions.style === RADIAL && <GradientRadialSizeControl />}
+      {style === RADIAL && <GradientRadialShapeControl />}
+      {style === RADIAL && <GradientRadialSizeControl />}
       <ColorControl />
       <OutputFormatControl />
       <ControlPanelOutputCode />

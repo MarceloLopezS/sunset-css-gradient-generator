@@ -1,5 +1,4 @@
-import { useContext } from "react"
-import { StoreContext, StoreDispatchContext } from "../../shared/state/store"
+import { useStoreData, dispatch } from "../../shared/state/store"
 import {
   CLOSEST_CORNER,
   CLOSEST_SIDE,
@@ -23,9 +22,7 @@ const availableSizes = [
 ]
 
 const GradientRadialSizeControl = () => {
-  const { gradientOptions } = useContext(StoreContext)
-  const dispatch = useContext(StoreDispatchContext)
-
+  const radialSize = useStoreData(state => state.radialSize)
   const dispatchAction = (type, payload) => () => dispatch({ type, payload })
 
   return (
@@ -36,7 +33,7 @@ const GradientRadialSizeControl = () => {
           return (
             <ControlButton
               key={size}
-              selected={gradientOptions[RADIAL].size === size}
+              selected={radialSize === size}
               onClick={dispatchAction(SET_RADIAL_SIZE, { size })}
             >
               {capitalizeString(toSpaceSeparated(size, "-"))}

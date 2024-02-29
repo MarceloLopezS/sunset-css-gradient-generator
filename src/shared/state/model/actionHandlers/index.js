@@ -5,10 +5,7 @@ import {
   SHOWN,
   HIDDEN,
   OUTSIDE_CONTAINER,
-  INSIDE_CONTAINER,
-  LINEAR,
-  RADIAL,
-  CONIC
+  INSIDE_CONTAINER
 } from "../../../utils/constants"
 import { getRandomHexColor, setLocalStorageItem } from "../../../utils/functions"
 
@@ -22,90 +19,71 @@ export const toggleTheme = (state) => {
 
 export const togglePanelDisplay = (state) => {
   const panelDisplay = state.panelDisplay === SHOWN ? HIDDEN : SHOWN
-  const position =
-    state.panelDisplayToggler.position === INSIDE_CONTAINER
+  const panelDisplayTogglerPosition =
+    state.panelDisplayTogglerPosition === INSIDE_CONTAINER
       ? OUTSIDE_CONTAINER
       : INSIDE_CONTAINER
-  const panelDisplayToggler = {
-    ...state.panelDisplayToggler, position
-  }
 
-  return { ...state, panelDisplay, panelDisplayToggler }
+  return { ...state, panelDisplay, panelDisplayTogglerPosition }
 }
 
 export const setGradientStyle = (state, action) => {
-  const style = action.payload.style
-  const gradientOptions = { ...state.gradientOptions, style }
+  const { style } = action.payload
 
-  return { ...state, gradientOptions }
+  return { ...state, gradientStyle: style }
 }
 
 export const setLinearDirection = (state, action) => {
-  const direction = action.payload.direction
-  const linearParams = {
-    ...state.gradientOptions[LINEAR], direction
-  }
-  const gradientOptions = {
-    ...state.gradientOptions, [LINEAR]: linearParams
-  }
+  const { direction } = action.payload
 
-  return { ...state, gradientOptions }
+  return { ...state, linearDirection: direction }
 }
 
-export const setRadialProp = (radialProp, state, action) => {
-  const payload = action.payload[radialProp];
-  const radialParams = {
-    ...state.gradientOptions[RADIAL], [radialProp]: payload
-  }
-  const gradientOptions = {
-    ...state.gradientOptions, [RADIAL]: radialParams
-  }
+export const setRadialShape = (state, action) => {
+  const { shape } = action.payload
 
-  return { ...state, gradientOptions }
+  return { ...state, radialShape: shape }
+}
+
+export const setRadialSize = (state, action) => {
+  const { size } = action.payload
+
+  return { ...state, radialSize: size }
+}
+
+export const setRadialPosition = (state, action) => {
+  const { position } = action.payload
+
+  return { ...state, radialPosition: position }
 }
 
 export const setConicStartAngle = (state, action) => {
-  const startAngle = action.payload.startAngle
-  const conicParams = {
-    ...state.gradientOptions[CONIC], startAngle
-  }
-  const gradientOptions = {
-    ...state.gradientOptions, [CONIC]: conicParams
-  }
+  const { startAngle } = action.payload
 
-  return { ...state, gradientOptions }
+  return { ...state, conicStartAngle: startAngle }
 }
 
 export const setGradientColor = (state, action) => {
   const { id, value, stop } = action.payload
   const modifiedColor = { id, value, stop }
-  const unChangedColors = state.gradientOptions.colors
+  const unChangedColors = state.colors
     .filter(color => color.id !== id)
   const colors = [modifiedColor, ...unChangedColors].sort((a, b) => a.id - b.id)
-  const gradientOptions = {
-    ...state.gradientOptions, colors
-  }
 
-  return { ...state, gradientOptions }
+  return { ...state, colors }
 }
 
 export const setColorFormat = (state, action) => {
   const { colorFormat } = action.payload
-  const gradientOptions = {
-    ...state.gradientOptions, colorFormat
-  }
 
-  return { ...state, gradientOptions }
+  return { ...state, colorFormat }
 }
 
 export const randomizeColorValues = (state) => {
-  const { colors } = state.gradientOptions
+  const { colors } = state
   const newColors = colors.map(color => (
     { ...color, value: getRandomHexColor() }
   ))
-  const gradientOptions = {
-    ...state.gradientOptions, colors: newColors
-  }
 
-  return { ...state, gradientOptions }
+  return { ...state, colors: newColors }
 }

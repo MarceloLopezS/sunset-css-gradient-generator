@@ -16,29 +16,19 @@ import {
 const initialState = {
   theme: getPreferedColorScheme(),
   panelDisplay: SHOWN,
-  panelDisplayToggler: {
-    position: INSIDE_CONTAINER
-  },
-  gradientOptions: {
-    style: LINEAR,
-    [LINEAR]: {
-      direction: BOTTOM_RIGHT
-    },
-    [RADIAL]: {
-      shape: CIRCLE,
-      size: FARTHEST_CORNER,
-      position: CENTER
-    },
-    [CONIC]: {
-      startAngle: DEGREES_0,
-      position: CENTER
-    },
-    colors: [
-      { id: 1, value: "#e6890f", stop: null },
-      { id: 2, value: "#0c75a6", stop: null }
-    ],
-    colorFormat: HEX
-  }
+  panelDisplayTogglerPosition: INSIDE_CONTAINER,
+  gradientStyle: LINEAR,
+  linearDirection: BOTTOM_RIGHT,
+  radialShape: CIRCLE,
+  radialSize: FARTHEST_CORNER,
+  radialPosition: CENTER,
+  conicStartAngle: DEGREES_0,
+  conicPosition: CENTER,
+  colors: [
+    { id: 1, value: "#e6890f", stop: null },
+    { id: 2, value: "#0c75a6", stop: null }
+  ],
+  colorFormat: HEX
 }
 
 export default initialState

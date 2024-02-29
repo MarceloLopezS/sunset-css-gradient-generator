@@ -1,5 +1,4 @@
-import { useContext } from "react"
-import { StoreContext } from "../../shared/state/store"
+import { useStoreData } from "../../shared/state/store"
 import {
   pipe,
   setGradientStyle,
@@ -13,17 +12,17 @@ import {
 } from "../../shared/utils/functions"
 
 const GradientDisplay = () => {
-  const { gradientOptions } = useContext(StoreContext)
+  const store = useStoreData(state => state)
   const generateGradientString = pipe(
-    setGradientStyle(gradientOptions),
+    setGradientStyle(store),
     appendString("("),
-    appendConicStartAngle(gradientOptions),
-    appendRadialShape(gradientOptions),
-    appendRadialSize(gradientOptions),
-    appendGradientPosition(gradientOptions),
-    appendLinearDirection(gradientOptions),
+    appendConicStartAngle(store),
+    appendRadialShape(store),
+    appendRadialSize(store),
+    appendGradientPosition(store),
+    appendLinearDirection(store),
     appendString(", "),
-    appendGradientColors(gradientOptions),
+    appendGradientColors(store),
     appendString(")")
   )
 
