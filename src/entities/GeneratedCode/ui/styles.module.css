@@ -28,7 +28,8 @@
   color: var(--accent-theme);
   background-color: var(--bg-theme);
   z-index: 10;
-  transition: color 500ms ease;
+  transition: color var(--default-animation-duration)
+    var(--default-animation-timing-function);
 }
 
 .copy-to-clipboard:hover,
