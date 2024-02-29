@@ -57,6 +57,9 @@
   --control-height: var(--size-185);
   --control-border: 2px solid var(--accent-theme);
   --control-gap: var(--size-50);
+
+  --default-animation-duration: 500ms;
+  --default-animation-timing-function: ease;
 }
 
 @media (min-width: 45rem) {
@@ -223,7 +226,8 @@ code {
   color: var(--accent-theme);
   width: 100%;
   height: 100%;
-  transition: color 500ms ease;
+  transition: color var(--default-animation-duration)
+    var(--default-animation-timing-function);
 }
 
 .toggler-button:hover svg,
