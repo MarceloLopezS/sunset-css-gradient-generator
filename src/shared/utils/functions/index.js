@@ -219,6 +219,8 @@ export const appendGradientColors = gradientOptions => gradientString => {
         ? hexToRgb(value)
         : colorFormat === HSL && hexToHsl(value)
 
+    if (!formatedValue) throw new Error("Invalid color format")
+
     if (index === 0)
       return (
         formatedValue + (stop == null
