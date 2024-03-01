@@ -28,8 +28,9 @@
   color: var(--accent-theme);
   background-color: var(--bg-theme);
   z-index: 10;
-  transition: color var(--default-animation-duration)
-    var(--default-animation-timing-function);
+  transition-property: color, background-color;
+  transition-duration: var(--default-animation-duration);
+  transition-timing-function: var(--default-animation-timing-function);
 }
 
 .copy-to-clipboard:hover,
