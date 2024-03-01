@@ -3,7 +3,7 @@ import { useStoreData } from "../../shared/state/store"
 import ClipboardSVG from "../../shared/ui/SVGs/Clipboard"
 import {
   pipe,
-  setGradientStyle,
+  initGradientStyle,
   appendString,
   appendConicStartAngle,
   appendRadialShape,
@@ -17,17 +17,19 @@ import styles from "./ui/styles.module.css"
 
 const GeneratedCode = () => {
   const codeRef = useRef(null)
-  const store = useStoreData(state => state)
+  const gradientOptions = useStoreData(state => state.gradientOptions)
+  const colorFormat = useStoreData(state => state.colorFormat)
+
   const generateGradient = pipe(
-    setGradientStyle(store),
+    initGradientStyle(gradientOptions),
     appendString("("),
-    appendConicStartAngle(store),
-    appendRadialShape(store),
-    appendRadialSize(store),
-    appendGradientPosition(store),
-    appendLinearDirection(store),
+    appendConicStartAngle(gradientOptions),
+    appendRadialShape(gradientOptions),
+    appendRadialSize(gradientOptions),
+    appendGradientPosition(gradientOptions),
+    appendLinearDirection(gradientOptions),
     appendString(", "),
-    appendGradientColors(store),
+    appendGradientColors({ ...gradientOptions, colorFormat }),
     appendString(")")
   )
 

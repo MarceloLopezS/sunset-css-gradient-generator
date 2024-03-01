@@ -22,7 +22,7 @@ const availableSizes = [
 ]
 
 const GradientRadialSizeControl = () => {
-  const radialSize = useStoreData(state => state.radialSize)
+  const radialSize = useStoreData(state => state.gradientOptions.radialSize)
   const dispatchAction = (type, payload) => () => dispatch({ type, payload })
 
   return (

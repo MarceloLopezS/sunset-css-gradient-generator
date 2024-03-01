@@ -8,7 +8,7 @@ import ControlButton from "../../shared/ui/ControlButton"
 const availableShapes = [ELLIPSE, CIRCLE]
 
 const GradientRadialShapeControl = () => {
-  const radialShape = useStoreData(state => state.radialShape)
+  const radialShape = useStoreData(state => state.gradientOptions.radialShape)
   const dispatchAction = (type, payload) => () => dispatch({ type, payload })
 
   return (

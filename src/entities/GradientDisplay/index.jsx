@@ -1,7 +1,7 @@
 import { useStoreData } from "../../shared/state/store"
 import {
   pipe,
-  setGradientStyle,
+  initGradientStyle,
   appendString,
   appendConicStartAngle,
   appendRadialShape,
@@ -12,17 +12,17 @@ import {
 } from "../../shared/utils/functions"
 
 const GradientDisplay = () => {
-  const store = useStoreData(state => state)
+  const gradientOptions = useStoreData(state => state.gradientOptions)
   const generateGradientString = pipe(
-    setGradientStyle(store),
+    initGradientStyle(gradientOptions),
     appendString("("),
-    appendConicStartAngle(store),
-    appendRadialShape(store),
-    appendRadialSize(store),
-    appendGradientPosition(store),
-    appendLinearDirection(store),
+    appendConicStartAngle(gradientOptions),
+    appendRadialShape(gradientOptions),
+    appendRadialSize(gradientOptions),
+    appendGradientPosition(gradientOptions),
+    appendLinearDirection(gradientOptions),
     appendString(", "),
-    appendGradientColors(store),
+    appendGradientColors(gradientOptions),
     appendString(")")
   )
 

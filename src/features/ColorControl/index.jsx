@@ -5,8 +5,8 @@ import ControlButton from "../../shared/ui/ControlButton"
 import { RANDOMIZE_COLOR_VALUES } from "../../shared/state/config/actions"
 
 const ColorControl = () => {
-  const style = useStoreData(state => state.gradientStyle)
-  const colors = useStoreData(state => state.colors)
+  const style = useStoreData(state => state.gradientOptions.style)
+  const colors = useStoreData(state => state.gradientOptions.colors)
   const dispatchAction = () => dispatch({ type: RANDOMIZE_COLOR_VALUES })
 
   return (

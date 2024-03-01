@@ -8,7 +8,7 @@ import ControlButton from "../../shared/ui/ControlButton"
 const styleOptions = [LINEAR, RADIAL, CONIC]
 
 const GradientStyleControl = () => {
-  const style = useStoreData(state => state.gradientStyle)
+  const style = useStoreData(state => state.gradientOptions.style)
   const dispatchAction = (type, payload) => () => dispatch({ type, payload })
 
   return (

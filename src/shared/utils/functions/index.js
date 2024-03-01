@@ -155,65 +155,65 @@ export const hexToHsl = (hexColor) => {
   return `hsl(${h}, ${s}%, ${l}%)`
 }
 
-export const setGradientStyle = store => () => {
-  const { gradientStyle } = store
+export const initGradientStyle = gradientOptions => () => {
+  const { style } = gradientOptions
   if (
-    gradientStyle !== RADIAL
-    && gradientStyle !== CONIC
-    && gradientStyle !== LINEAR
+    style !== RADIAL
+    && style !== CONIC
+    && style !== LINEAR
   ) return gradientString
 
-  return `${gradientStyle}-gradient`
+  return `${style}-gradient`
 }
 
 export const appendString = string => gradientString => {
   return `${gradientString}${string}`
 }
 
-export const appendConicStartAngle = store => gradientString => {
-  const { gradientStyle } = store
-  if (gradientStyle !== CONIC) return gradientString
+export const appendConicStartAngle = gradientOptions => gradientString => {
+  const { style } = gradientOptions
+  if (style !== CONIC) return gradientString
 
-  return `${gradientString}from ${store.conicStartAngle}`
+  return `${gradientString}from ${gradientOptions.conicStartAngle}`
 }
 
-export const appendRadialShape = store => gradientString => {
-  const { gradientStyle } = store
-  if (gradientStyle !== RADIAL) return gradientString
+export const appendRadialShape = gradientOptions => gradientString => {
+  const { style } = gradientOptions
+  if (style !== RADIAL) return gradientString
 
-  return `${gradientString}${store.radialShape}`
+  return `${gradientString}${gradientOptions.radialShape}`
 }
 
-export const appendRadialSize = store => gradientString => {
-  const { gradientStyle } = store
-  if (gradientStyle !== RADIAL) return gradientString
+export const appendRadialSize = gradientOptions => gradientString => {
+  const { style } = gradientOptions
+  if (style !== RADIAL) return gradientString
 
-  return `${gradientString} ${store.radialSize}`
+  return `${gradientString} ${gradientOptions.radialSize}`
 }
 
-export const appendGradientPosition = store => gradientString => {
-  const { gradientStyle } = store
+export const appendGradientPosition = gradientOptions => gradientString => {
+  const { style } = gradientOptions
   if (
-    gradientStyle !== RADIAL
-    && gradientStyle !== CONIC
+    style !== RADIAL
+    && style !== CONIC
   ) return gradientString
 
-  return `${gradientString} at ${store.radialPosition}`
+  return `${gradientString} at ${gradientOptions.radialPosition}`
 }
 
-export const appendLinearDirection = store => gradientString => {
-  const { gradientStyle } = store
-  if (gradientStyle !== LINEAR) return gradientString
+export const appendLinearDirection = gradientOptions => gradientString => {
+  const { style } = gradientOptions
+  if (style !== LINEAR) return gradientString
 
-  return `${gradientString}to ${store.linearDirection}`
+  return `${gradientString}to ${gradientOptions.linearDirection}`
 }
 
-export const appendGradientColors = store => gradientString => {
-  const { gradientStyle, colors, colorFormat } = store
+export const appendGradientColors = gradientOptions => gradientString => {
+  const { style, colors, colorFormat } = gradientOptions
 
   return gradientString + colors.reduce((acc, color, index) => {
     const { value, stop } = color
-    const formatedValue = colorFormat === HEX
+    const formatedValue = colorFormat == null || colorFormat === HEX
       ? value
       : colorFormat === RGB
         ? hexToRgb(value)
@@ -222,14 +222,14 @@ export const appendGradientColors = store => gradientString => {
     if (index === 0)
       return (
         formatedValue + (stop == null
-          ? "" : ` ${stop}${gradientStyle === CONIC ? "deg" : "%"}`)
+          ? "" : ` ${stop}${style === CONIC ? "deg" : "%"}`)
       )
 
     return (
       acc +
       ", " +
       formatedValue +
-      (stop == null ? "" : ` ${stop}${gradientStyle === CONIC ? "deg" : "%"}`)
+      (stop == null ? "" : ` ${stop}${style === CONIC ? "deg" : "%"}`)
     )
   }, "")
 }
