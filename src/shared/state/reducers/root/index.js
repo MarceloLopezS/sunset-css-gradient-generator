@@ -10,7 +10,8 @@ import {
   SET_RADIAL_SIZE,
   SET_GRADIENT_COLOR,
   SET_COLOR_FORMAT,
-  RANDOMIZE_COLOR_VALUES
+  RANDOMIZE_COLOR_VALUES,
+  ADD_COLOR
 } from "../../config/actions"
 import {
   toggleTheme,
@@ -23,7 +24,8 @@ import {
   setConicStartAngle,
   setGradientColor,
   setColorFormat,
-  randomizeColorValues
+  randomizeColorValues,
+  addColor
 } from "../../model/actionHandlers"
 
 const rootReducer = (state, action) => {
@@ -48,6 +50,8 @@ const rootReducer = (state, action) => {
       return setGradientColor(state, action)
     case SET_COLOR_FORMAT:
       return setColorFormat(state, action)
+    case ADD_COLOR:
+      return addColor(state)
     case RANDOMIZE_COLOR_VALUES:
       return randomizeColorValues(state)
     default: {
