@@ -1,5 +1,21 @@
-.colors-wrapper {
+.controls-wrapper {
   display: flex;
   flex-direction: column;
   gap: var(--control-gap);
+}
+
+.colors-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(var(--control-height) * 3.15);
+  gap: var(--control-gap);
+  padding-inline: 0.15em;
+  overflow: hidden auto;
+  scrollbar-color: var(--accent-theme) transparent;
+  scrollbar-width: thin;
+}
+
+.controls-wrapper svg {
+  height: 1.2em;
+  width: 1.2em;
 }
