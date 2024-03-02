@@ -46,7 +46,7 @@ const InputColor = ({ colorId, colorValue, colorStop, colorStyle }) => {
             className={styles.input}
             minLength="1"
             maxLength="3"
-            value={colorStop || ""}
+            value={colorStop ?? ""}
             placeholder="-"
             onChange={dispatchAction(SET_GRADIENT_COLOR, colorId)}
           />
