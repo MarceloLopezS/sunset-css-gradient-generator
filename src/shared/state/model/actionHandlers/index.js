@@ -5,7 +5,8 @@ import {
   SHOWN,
   HIDDEN,
   OUTSIDE_CONTAINER,
-  INSIDE_CONTAINER
+  INSIDE_CONTAINER,
+  HEX_COLOR_WHITE
 } from "../../../utils/constants"
 import { getRandomHexColor, setLocalStorageItem } from "../../../utils/functions"
 
@@ -99,6 +100,19 @@ export const setColorFormat = (state, action) => {
   const { colorFormat } = action.payload
 
   return { ...state, colorFormat }
+}
+
+export const addColor = (state) => {
+  const lastColor = state.gradientOptions.colors.at(-1);
+  const newColor = { id: lastColor.id + 1, value: HEX_COLOR_WHITE, stop: null }
+  const colors = [
+    ...state.gradientOptions.colors, newColor
+  ]
+  const gradientOptions = {
+    ...state.gradientOptions, colors
+  }
+
+  return { ...state, gradientOptions }
 }
 
 export const randomizeColorValues = (state) => {
