@@ -42,6 +42,7 @@
   --size-15: 0.15rem;
   --size-20: 0.2rem;
   --size-25: 0.25rem;
+  --size-30: 0.3rem;
   --size-35: 0.35rem;
   --size-50: 0.5rem;
   --size-75: 0.75rem;
@@ -81,14 +82,14 @@
 
     --control-height: clamp(var(--size-150), 3.1vh, var(--size-185));
     --control-border: 1px solid var(--accent-theme);
-    --control-gap: clamp(var(--size-15), 0.2vw, var(--size-35));
+    --control-gap: clamp(var(--size-20), 0.2vw, var(--size-35));
   }
 }
 
 @media (min-width: 100rem) {
   :root {
     --control-border: 2px solid var(--accent-theme);
-    --control-gap: var(--size-35);
+    --control-gap: var(--size-30);
   }
 }
 
@@ -170,6 +171,11 @@ button {
 
 code {
   font-family: var(--ff-code);
+}
+
+svg {
+  width: 1em;
+  height: 1em;
 }
 
 ::-webkit-scrollbar {
