@@ -198,7 +198,11 @@ export const appendGradientPosition = gradientOptions => gradientString => {
     && style !== CONIC
   ) return gradientString
 
-  return `${gradientString} at ${gradientOptions.radialPosition}`
+  const position = style === RADIAL
+    ? gradientOptions.radialPosition
+    : style === CONIC && gradientOptions.conicPosition
+
+  return `${gradientString} at ${position}`
 }
 
 export const appendLinearDirection = gradientOptions => gradientString => {
