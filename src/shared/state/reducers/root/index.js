@@ -11,7 +11,8 @@ import {
   SET_GRADIENT_COLOR,
   SET_COLOR_FORMAT,
   RANDOMIZE_COLOR_VALUES,
-  ADD_COLOR
+  ADD_COLOR,
+  DELETE_COLOR
 } from "../../config/actions"
 import {
   toggleTheme,
@@ -25,7 +26,8 @@ import {
   setGradientColor,
   setColorFormat,
   randomizeColorValues,
-  addColor
+  addColor,
+  deleteColor
 } from "../../model/actionHandlers"
 
 const rootReducer = (state, action) => {
@@ -52,6 +54,8 @@ const rootReducer = (state, action) => {
       return setColorFormat(state, action)
     case ADD_COLOR:
       return addColor(state)
+    case DELETE_COLOR:
+      return deleteColor(state, action)
     case RANDOMIZE_COLOR_VALUES:
       return randomizeColorValues(state)
     default: {
