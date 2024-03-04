@@ -7,7 +7,7 @@
 .colors-wrapper {
   display: flex;
   flex-direction: column;
-  max-height: calc(var(--control-height) * 3.15);
+  max-height: calc(var(--control-height) * 3.35);
   gap: var(--control-gap);
   padding-inline: 0.15em;
   overflow: hidden auto;
