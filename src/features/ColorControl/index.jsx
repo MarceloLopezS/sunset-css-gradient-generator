@@ -18,7 +18,7 @@ const ColorControl = () => {
       <p className="text-bold margin-block-end-50">Colors</p>
       <div className={styles["controls-wrapper"]}>
         <div className={styles["colors-wrapper"]}>
-          {colors.map(color => {
+          {colors.map((color, index, array) => {
             const { id, value, stop } = color
             return (
               <InputColor
@@ -27,6 +27,7 @@ const ColorControl = () => {
                 colorValue={value}
                 colorStop={stop}
                 colorStyle={style}
+                isDeleteable={array.length > 2}
               />
             )
           })}
