@@ -1,7 +1,11 @@
 import { useRef } from "react"
 import { dispatch } from "../../shared/state/store"
-import { SET_GRADIENT_COLOR } from "../../shared/state/config/actions"
+import {
+  DELETE_COLOR,
+  SET_GRADIENT_COLOR
+} from "../../shared/state/config/actions"
 import { CONIC } from "../../shared/utils/constants"
+import TrashSVG from "../../shared/ui/SVGs/Trash"
 import styles from "./ui/styles.module.css"
 
 const validateStopInput = value => {
@@ -11,7 +15,13 @@ const validateStopInput = value => {
   return parsedVal
 }
 
-const InputColor = ({ colorId, colorValue, colorStop, colorStyle }) => {
+const InputColor = ({
+  colorId,
+  colorValue,
+  colorStop,
+  colorStyle,
+  isDeleteable
+}) => {
   const colorRef = useRef(null)
   const stopRef = useRef(null)
   const dispatchAction = (type, colorId) => () =>
@@ -27,7 +37,7 @@ const InputColor = ({ colorId, colorValue, colorStop, colorStyle }) => {
   return (
     <div className={styles["color-group"]}>
       <label className={styles.label}>
-        <span className="visually-hidden">Input color</span>
+        <span className="visually-hidden">{`Input color ${colorId}`}</span>
         <input
           ref={colorRef}
           type="color"
@@ -35,6 +45,15 @@ const InputColor = ({ colorId, colorValue, colorStop, colorStyle }) => {
           value={colorValue}
           onChange={dispatchAction(SET_GRADIENT_COLOR, colorId)}
         />
+        {isDeleteable && (
+          <button
+            className={styles["color--delete"]}
+            onClick={dispatchAction(DELETE_COLOR, colorId)}
+          >
+            <span className="visually-hidden">{`Delete color ${colorId}`}</span>
+            <TrashSVG />
+          </button>
+        )}
       </label>
       <span className="text-center">solid</span>
       <div className={styles["percentage-container"]}>
