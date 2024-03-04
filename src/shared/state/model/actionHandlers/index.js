@@ -115,6 +115,17 @@ export const addColor = (state) => {
   return { ...state, gradientOptions }
 }
 
+export const deleteColor = (state, action) => {
+  const { id } = action.payload
+  const { colors } = state.gradientOptions
+  const updatedColors = colors.filter(color => color.id !== id)
+  const gradientOptions = {
+    ...state.gradientOptions, colors: updatedColors
+  }
+
+  return { ...state, gradientOptions }
+}
+
 export const randomizeColorValues = (state) => {
   const { colors } = state.gradientOptions
   const newColors = colors.map(color => (
