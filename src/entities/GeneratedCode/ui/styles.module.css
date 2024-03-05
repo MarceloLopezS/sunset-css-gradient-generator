@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   height: 100%;
-  text-wrap: nowrap;
+  white-space: nowrap;
   color: var(--clr-code);
   padding-inline: var(--size-25);
   overflow: scroll hidden;
