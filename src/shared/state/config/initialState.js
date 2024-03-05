@@ -3,7 +3,7 @@ import {
   SHOWN,
   INSIDE_CONTAINER,
   LINEAR,
-  TOP_LEFT,
+  BOTTOM_RIGHT,
   CENTER,
   DEGREES_0,
   CIRCLE,
@@ -17,15 +17,15 @@ const initialState = {
   panelDisplayTogglerPosition: INSIDE_CONTAINER,
   gradientOptions: {
     style: LINEAR,
-    linearDirection: TOP_LEFT,
+    linearDirection: BOTTOM_RIGHT,
     radialShape: CIRCLE,
     radialSize: FARTHEST_CORNER,
     radialPosition: CENTER,
     conicStartAngle: DEGREES_0,
     conicPosition: CENTER,
     colors: [
-      { id: 1, value: "#fe5810", stop: null },
-      { id: 2, value: "#00308f", stop: null }
+      { id: 1, value: "#00308f", stop: null },
+      { id: 2, value: "#fe5810", stop: null }
     ]
   },
   colorFormat: HEX
