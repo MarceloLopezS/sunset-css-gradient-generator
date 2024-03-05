@@ -19,21 +19,3 @@
   scrollbar-color: var(--accent-theme) transparent;
   scrollbar-width: thin;
 }
-
-.copy-to-clipboard {
-  position: absolute;
-  top: var(--padding);
-  right: var(--padding);
-  width: var(--size-100);
-  color: var(--accent-theme);
-  background-color: var(--bg-theme);
-  z-index: 10;
-  transition-property: color, background-color;
-  transition-duration: var(--default-animation-duration);
-  transition-timing-function: var(--default-animation-timing-function);
-}
-
-.copy-to-clipboard:hover,
-.copy-to-clipboard:focus-visible {
-  color: var(--clr-theme);
-}
