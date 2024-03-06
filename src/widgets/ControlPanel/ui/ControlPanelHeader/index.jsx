@@ -1,16 +1,20 @@
-import "./ui/styles.css"
 import ThemeToggler from "../../../../shared/ui/ThemeToggler"
 import ControlPanelDisplayToggler from "../ControlPanelDisplayToggler"
+import ShareGradient from "../../../../features/ShareGradient"
+import styles from "./ui/styles.module.css"
 
 const ControlPanelHeader = () => {
   return (
-    <header className="control-panel__header">
-      <div className="control-panel__togglers-wrapper">
-        <ThemeToggler />
+    <header className={`${styles["cp__header"]}`}>
+      <section className={`${styles["cp__togglers-wrapper"]}`}>
+        <div className={`${styles["cp__left-buttons-wrapper"]}`}>
+          <ThemeToggler />
+          <ShareGradient />
+        </div>
         <ControlPanelDisplayToggler />
-      </div>
-      <h1 className="control-panel__title | text-bold">
-        Sunset - CSS Gradient Generator
+      </section>
+      <h1 className={`${styles["cp__title"]} | text-bold`}>
+        <a href="/">Sunset - CSS Gradient Generator</a>
       </h1>
     </header>
   )
