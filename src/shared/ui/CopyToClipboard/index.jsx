@@ -4,7 +4,7 @@ import CheckSVG from "../SVGs/Check"
 import ClipboardSVG from "../SVGs/Clipboard"
 import styles from "./ui/styles.module.css"
 
-const CopyToClipboard = ({ value, valueGetter }) => {
+const CopyToClipboard = ({ value, valueGetter, className }) => {
   const [coppied, setCoppied] = useState(false)
   const [copyCount, setCopyCount] = useState(0)
 
@@ -21,7 +21,13 @@ const CopyToClipboard = ({ value, valueGetter }) => {
   }
 
   return (
-    <button className={styles["copy-to-clipboard"]} onClick={onClipboardClick}>
+    <button
+      className={`${styles["copy-to-clipboard"]}${
+        className == null ? "" : " " + className
+      }`}
+      type="button"
+      onClick={onClipboardClick}
+    >
       <span className="visually-hidden">
         {coppied ? "Coppied!" : "Copy to clipboard"}
       </span>
