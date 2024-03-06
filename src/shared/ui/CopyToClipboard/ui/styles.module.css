@@ -1,7 +1,4 @@
 .copy-to-clipboard {
-  position: absolute;
-  top: var(--padding);
-  right: var(--padding);
   width: var(--size-100);
   color: var(--accent-theme);
   background-color: var(--bg-theme);
