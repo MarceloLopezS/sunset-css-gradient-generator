@@ -1,0 +1,27 @@
+.code-container {
+  --padding: var(--size-25);
+
+  position: relative;
+  height: calc(var(--control-height) * 1.8);
+  padding: var(--padding);
+  border: var(--control-border);
+  border-radius: var(--control-border-radius);
+}
+
+.code-container code {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  color: var(--clr-code);
+  padding-inline: var(--size-25);
+  overflow: scroll hidden;
+  scrollbar-color: var(--accent-theme) transparent;
+  scrollbar-width: thin;
+}
+
+.code-copy-button {
+  position: absolute;
+  top: var(--padding);
+  right: var(--padding);
+}
