@@ -1,4 +1,3 @@
-import { useRef } from "react"
 import { useStoreData } from "../../shared/state/store"
 import {
   pipe,
@@ -11,15 +10,11 @@ import {
   appendLinearDirection,
   appendGradientColors
 } from "../../shared/utils/functions"
-import styles from "./ui/styles.module.css"
-import CopyToClipboard from "../../shared/ui/CopyToClipboard"
+import CodeContainer from "../../shared/ui/CodeContainer"
 
 const GeneratedCode = () => {
-  const codeRef = useRef(null)
   const gradientOptions = useStoreData(state => state.gradientOptions)
   const colorFormat = useStoreData(state => state.colorFormat)
-
-  const getCodeText = () => codeRef.current.textContent
 
   const generateGradient = pipe(
     initGradientStyle(gradientOptions),
@@ -34,12 +29,7 @@ const GeneratedCode = () => {
     appendString(")")
   )
 
-  return (
-    <div className={styles["code-container"]}>
-      <code ref={codeRef}>{generateGradient()}</code>
-      <CopyToClipboard valueGetter={getCodeText} />
-    </div>
-  )
+  return <CodeContainer>{generateGradient()}</CodeContainer>
 }
 
 export default GeneratedCode
