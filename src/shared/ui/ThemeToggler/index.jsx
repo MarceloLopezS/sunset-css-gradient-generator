@@ -9,7 +9,11 @@ const ThemeToggler = () => {
   const dispatchAction = () => dispatch({ type: TOGGLE_THEME })
 
   return (
-    <button className="theme-toggler | toggler-button" onClick={dispatchAction}>
+    <button
+      className="theme-toggler | toggler-button"
+      type="button"
+      onClick={dispatchAction}
+    >
       <span className="visually-hidden">Toggle Theme</span>
       {theme === DARK ? <SunSVG /> : <MoonSVG />}
     </button>
