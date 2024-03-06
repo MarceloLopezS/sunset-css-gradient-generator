@@ -1,13 +1,18 @@
-.control-panel__header {
+.cp__header {
   padding-block-end: var(--size-35);
 }
 
-.control-panel__togglers-wrapper {
+.cp__togglers-wrapper {
   display: flex;
   justify-content: space-between;
   margin-block-end: var(--size-75);
 }
 
-.control-panel__title {
+.cp__left-buttons-wrapper {
+  display: flex;
+  column-gap: 1em;
+}
+
+.cp__title {
   font-size: var(--fs-title);
 }
