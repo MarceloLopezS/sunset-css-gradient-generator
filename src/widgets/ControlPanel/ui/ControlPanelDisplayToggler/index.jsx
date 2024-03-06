@@ -14,6 +14,7 @@ const ControlPanelDisplayToggler = () => {
     <button
       className={`${styles["control-panel--toggler"]} | toggler-button`}
       data-position={panelDisplayTogglerPosition}
+      type="button"
       onClick={dispatchAction}
     >
       <span className="visually-hidden">Toggle Panel Display</span>
