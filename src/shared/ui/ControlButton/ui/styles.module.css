@@ -5,7 +5,7 @@
   color: var(--clr-theme);
   background-color: transparent;
   border: var(--control-border);
-  border-radius: 0.35em;
+  border-radius: var(--control-border-radius);
   outline: 1px solid transparent;
   transition: background-color var(--default-animation-duration)
     var(--default-animation-timing-function);
