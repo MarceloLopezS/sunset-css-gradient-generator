@@ -1,10 +1,11 @@
-import { useModal } from "./model/hooks"
 import ShareSVG from "../../shared/ui/SVGs/Share"
 import styles from "./ui/index.module.css"
 import CodeContainer from "../../shared/ui/CodeContainer"
+import Modal from "../../shared/ui/Modal"
+import { useRef } from "react"
 
 const ShareGradient = () => {
-  const [modalOpenerRef, dialogRef] = useModal()
+  const modalOpenerRef = useRef(null)
 
   return (
     <>
@@ -15,14 +16,15 @@ const ShareGradient = () => {
         <span className="visually-hidden">Share Gradient</span>
         <ShareSVG />
       </button>
-      <dialog ref={dialogRef} className={styles["modal"]}>
+      <Modal modalOpenerRef={modalOpenerRef} className={styles["modal"]}>
         <p className={`${styles["modal__title"]} text-bold`}>
           Share your gradient
         </p>
         <section className={styles["modal__body"]}>
+          <p className="text-bold margin-block-end-50">Share link:</p>
           <CodeContainer></CodeContainer>
         </section>
-      </dialog>
+      </Modal>
     </>
   )
 }
