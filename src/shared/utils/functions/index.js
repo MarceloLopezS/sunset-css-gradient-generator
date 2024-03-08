@@ -33,6 +33,14 @@ export const getPreferedColorScheme = () => {
     : LIGHT
 }
 
+export const getURLSearchParam = (name) => {
+  return new URL(location.href).searchParams.get(name)
+}
+
+export const getAllURLSearchParams = (name) => {
+  return new URL(location.href).searchParams.getAll(name)
+}
+
 export const capitalizeString = (string) => {
   if (typeof string !== "string") {
     throw new TypeError("String is expected to be capitalized.")
@@ -166,8 +174,10 @@ export const initGradientStyle = gradientOptions => () => {
   return `${style}-gradient`
 }
 
-export const appendString = string => gradientString => {
-  return `${gradientString}${string}`
+export const appendString = string => accString => {
+  if (accString == null) return `${string}`
+
+  return `${accString}${string}`
 }
 
 export const appendConicStartAngle = gradientOptions => gradientString => {
@@ -249,4 +259,17 @@ const getRandomHexColorComponent = () => {
 export const getRandomHexColor = () => {
   return "#" + getRandomHexColorComponent() + getRandomHexColorComponent()
     + getRandomHexColorComponent()
+}
+
+export const appendURLQueries = (queryObject) => (stringURL) => {
+  const queryPairs = Object.entries(queryObject)
+  const queryString = queryPairs.reduce((acc, keyValueArr, index) => {
+    const [key, value] = keyValueArr
+
+    if (index === 0) return `${key}=${value}`
+
+    return `${acc}&${key}=${value}`
+  }, "")
+
+  return `${stringURL}${queryString}`
 }
