@@ -1,8 +1,8 @@
-import ShareSVG from "../../shared/ui/SVGs/Share"
-import styles from "./ui/index.module.css"
-import CodeContainer from "../../shared/ui/CodeContainer"
-import Modal from "../../shared/ui/Modal"
 import { useRef } from "react"
+import ShareSVG from "../../shared/ui/SVGs/Share"
+import Modal from "../../shared/ui/Modal"
+import LinkShare from "./ui/LinkShare"
+import styles from "./ui/styles.module.css"
 
 const ShareGradient = () => {
   const modalOpenerRef = useRef(null)
@@ -22,7 +22,7 @@ const ShareGradient = () => {
         </p>
         <section className={styles["modal__body"]}>
           <p className="text-bold margin-block-end-50">Share link:</p>
-          <CodeContainer></CodeContainer>
+          <LinkShare />
         </section>
       </Modal>
     </>
