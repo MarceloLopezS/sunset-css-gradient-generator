@@ -27,6 +27,7 @@
 
   --fs-60: 0.6rem;
   --fs-70: 0.7rem;
+  --fs-75: 0.75rem;
   --fs-80: 0.8rem;
   --fs-90: 0.9rem;
   --fs-100: 1rem;
@@ -77,7 +78,7 @@
 
 @media (min-width: 60rem) {
   :root {
-    --fs-body: clamp(var(--fs-70), 0.82vw, var(--fs-100));
+    --fs-body: clamp(var(--fs-75), 0.82vw, var(--fs-100));
     --fs-title: clamp(var(--fs-100), 1.25vw, var(--fs-150));
     --fs-footer: clamp(var(--fs-60), 0.7vw, var(--fs-90));
 
@@ -219,7 +220,7 @@ svg {
 }
 
 .toggler-button {
-  width: var(--size-150);
+  width: 1.5em;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
