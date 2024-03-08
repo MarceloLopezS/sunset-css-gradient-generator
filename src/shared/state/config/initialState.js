@@ -3,6 +3,8 @@ import {
   SHOWN,
   INSIDE_CONTAINER,
   LINEAR,
+  RADIAL,
+  CONIC,
   BOTTOM_RIGHT,
   CENTER,
   DEGREES_0,
@@ -17,12 +19,18 @@ const initialState = {
   panelDisplayTogglerPosition: INSIDE_CONTAINER,
   gradientOptions: {
     style: LINEAR,
-    linearDirection: BOTTOM_RIGHT,
-    radialShape: CIRCLE,
-    radialSize: FARTHEST_CORNER,
-    radialPosition: CENTER,
-    conicStartAngle: DEGREES_0,
-    conicPosition: CENTER,
+    [LINEAR]: {
+      direction: BOTTOM_RIGHT,
+    },
+    [RADIAL]: {
+      shape: CIRCLE,
+      size: FARTHEST_CORNER,
+      position: CENTER
+    },
+    [CONIC]: {
+      startAngle: DEGREES_0,
+      position: CENTER
+    },
     colors: [
       { id: 1, value: "#00308f", stop: null },
       { id: 2, value: "#fe5810", stop: null }

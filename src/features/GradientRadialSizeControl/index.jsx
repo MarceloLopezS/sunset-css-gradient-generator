@@ -22,21 +22,21 @@ const availableSizes = [
 ]
 
 const GradientRadialSizeControl = () => {
-  const radialSize = useStoreData(state => state.gradientOptions.radialSize)
+  const size = useStoreData(state => state.gradientOptions[RADIAL].size)
   const dispatchAction = (type, payload) => () => dispatch({ type, payload })
 
   return (
     <section>
       <p className="text-bold margin-block-end-50">Size</p>
       <ButtonGrid columns={2}>
-        {availableSizes.map(size => {
+        {availableSizes.map(availableSize => {
           return (
             <ControlButton
-              key={size}
-              selected={radialSize === size}
-              onClick={dispatchAction(SET_RADIAL_SIZE, { size })}
+              key={availableSize}
+              selected={size === availableSize}
+              onClick={dispatchAction(SET_RADIAL_SIZE, { size: availableSize })}
             >
-              {capitalizeString(toSpaceSeparated(size, "-"))}
+              {capitalizeString(toSpaceSeparated(availableSize, "-"))}
             </ControlButton>
           )
         })}

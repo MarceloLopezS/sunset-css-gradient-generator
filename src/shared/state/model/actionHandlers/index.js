@@ -6,7 +6,10 @@ import {
   HIDDEN,
   OUTSIDE_CONTAINER,
   INSIDE_CONTAINER,
-  HEX_COLOR_WHITE
+  HEX_COLOR_WHITE,
+  LINEAR,
+  RADIAL,
+  CONIC
 } from "../../../utils/constants"
 import { getRandomHexColor, setLocalStorageItem } from "../../../utils/functions"
 
@@ -39,8 +42,11 @@ export const setGradientStyle = (state, action) => {
 
 export const setLinearDirection = (state, action) => {
   const { direction } = action.payload
+  const linearProps = {
+    ...state.gradientOptions[LINEAR], direction
+  }
   const gradientOptions = {
-    ...state.gradientOptions, linearDirection: direction
+    ...state.gradientOptions, [LINEAR]: linearProps
   }
 
   return { ...state, gradientOptions }
@@ -48,8 +54,11 @@ export const setLinearDirection = (state, action) => {
 
 export const setRadialShape = (state, action) => {
   const { shape } = action.payload
+  const radialProps = {
+    ...state.gradientOptions[RADIAL], shape
+  }
   const gradientOptions = {
-    ...state.gradientOptions, radialShape: shape
+    ...state.gradientOptions, [RADIAL]: radialProps
   }
 
   return { ...state, gradientOptions }
@@ -57,8 +66,11 @@ export const setRadialShape = (state, action) => {
 
 export const setRadialSize = (state, action) => {
   const { size } = action.payload
+  const radialProps = {
+    ...state.gradientOptions[RADIAL], size
+  }
   const gradientOptions = {
-    ...state.gradientOptions, radialSize: size
+    ...state.gradientOptions, [RADIAL]: radialProps
   }
 
   return { ...state, gradientOptions }
@@ -66,8 +78,11 @@ export const setRadialSize = (state, action) => {
 
 export const setRadialPosition = (state, action) => {
   const { position } = action.payload
+  const radialProps = {
+    ...state.gradientOptions[RADIAL], position
+  }
   const gradientOptions = {
-    ...state.gradientOptions, radialPosition: position
+    ...state.gradientOptions, [RADIAL]: radialProps
   }
 
   return { ...state, gradientOptions }
@@ -75,8 +90,11 @@ export const setRadialPosition = (state, action) => {
 
 export const setConicStartAngle = (state, action) => {
   const { startAngle } = action.payload
+  const conicProps = {
+    ...state.gradientOptions[CONIC], startAngle
+  }
   const gradientOptions = {
-    ...state.gradientOptions, conicStartAngle: startAngle
+    ...state.gradientOptions, [CONIC]: conicProps
   }
 
   return { ...state, gradientOptions }

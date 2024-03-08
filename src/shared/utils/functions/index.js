@@ -174,21 +174,21 @@ export const appendConicStartAngle = gradientOptions => gradientString => {
   const { style } = gradientOptions
   if (style !== CONIC) return gradientString
 
-  return `${gradientString}from ${gradientOptions.conicStartAngle}`
+  return `${gradientString}from ${gradientOptions[CONIC].startAngle}`
 }
 
 export const appendRadialShape = gradientOptions => gradientString => {
   const { style } = gradientOptions
   if (style !== RADIAL) return gradientString
 
-  return `${gradientString}${gradientOptions.radialShape}`
+  return `${gradientString}${gradientOptions[RADIAL].shape}`
 }
 
 export const appendRadialSize = gradientOptions => gradientString => {
   const { style } = gradientOptions
   if (style !== RADIAL) return gradientString
 
-  return `${gradientString} ${gradientOptions.radialSize}`
+  return `${gradientString} ${gradientOptions[RADIAL].size}`
 }
 
 export const appendGradientPosition = gradientOptions => gradientString => {
@@ -199,8 +199,8 @@ export const appendGradientPosition = gradientOptions => gradientString => {
   ) return gradientString
 
   const position = style === RADIAL
-    ? gradientOptions.radialPosition
-    : style === CONIC && gradientOptions.conicPosition
+    ? gradientOptions[RADIAL].position
+    : style === CONIC && gradientOptions[CONIC].position
 
   return `${gradientString} at ${position}`
 }
@@ -209,7 +209,7 @@ export const appendLinearDirection = gradientOptions => gradientString => {
   const { style } = gradientOptions
   if (style !== LINEAR) return gradientString
 
-  return `${gradientString}to ${gradientOptions.linearDirection}`
+  return `${gradientString}to ${gradientOptions[LINEAR].direction}`
 }
 
 export const appendGradientColors = gradientOptions => gradientString => {

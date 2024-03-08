@@ -14,10 +14,12 @@ const setTitle = gradientStyle => {
 
 const GradientDirectionControl = () => {
   const style = useStoreData(state => state.gradientOptions.style)
-  const direction = useStoreData(state => state.gradientOptions.linearDirection)
-  const position = useStoreData(state => state.gradientOptions.radialPosition)
+  const direction = useStoreData(
+    state => state.gradientOptions[LINEAR].direction
+  )
+  const position = useStoreData(state => state.gradientOptions[RADIAL].position)
   const startAngle = useStoreData(
-    state => state.gradientOptions.conicStartAngle
+    state => state.gradientOptions[CONIC].startAngle
   )
   const dispatchAction = (type, payload) => () => dispatch({ type, payload })
 
