@@ -1,10 +1,18 @@
 .share-button {
-  width: var(--size-125);
+  width: 1.25em;
 }
 
 .modal {
   --modal-padding: 1.5em;
+  --min-width: 22rem;
+  --max-width: 32rem;
+  --inline-gap: 1rem;
 
+  width: clamp(
+    min(var(--min-width), calc(100% - var(--inline-gap) * 2)),
+    26.75vw,
+    var(--max-width)
+  );
   top: -25%;
   color: var(--clr-theme);
   background-color: var(--bg-theme);
@@ -35,12 +43,7 @@
 }
 
 .modal__title {
-  font-size: 1.1em;
+  font-size: 1.15em;
   text-align: center;
   margin-block-end: 1em;
-}
-
-.modal__body {
-  display: grid;
-  font-size: 0.9em;
 }
