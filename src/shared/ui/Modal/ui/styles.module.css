@@ -1,14 +1,5 @@
 .modal {
-  --min-width: 22rem;
-  --max-width: 30rem;
-  --inline-gap: 1rem;
-
   position: relative;
-  width: clamp(
-    var(--min-width),
-    25.15vw,
-    min(var(--max-width), calc(100% - var(--inline-gap) * 2))
-  );
 }
 
 .modal[open] {
