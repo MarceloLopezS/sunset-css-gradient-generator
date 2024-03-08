@@ -19,18 +19,6 @@ const useCloseModal = () => {
     dialog.addEventListener("animationend", handleCloseAnimation)
   }, [dialogRef])
 
-  const closeModalOnOutsideClick = useCallback((e) => {
-    const modalDimensions = e.target.getBoundingClientRect();
-    if (
-      e.clientX < modalDimensions.left ||
-      e.clientX > modalDimensions.right ||
-      e.clientY < modalDimensions.top ||
-      e.clientY > modalDimensions.bottom
-    ) {
-      closeModal()
-    }
-  }, [dialogRef])
-
   const closeModalOnEscKey = useCallback((e) => {
     if (e.key === 'Escape') {
       e.preventDefault();
@@ -50,12 +38,10 @@ const useCloseModal = () => {
     const closeButton = closeButtonRef.current
 
     closeButton.addEventListener("click", closeModal)
-    dialog.addEventListener("click", closeModalOnOutsideClick)
     dialog.addEventListener("keydown", closeModalOnEscKey)
 
     return () => {
       closeButton.removeEventListener("click", closeModal)
-      dialog.removeEventListener("click", closeModalOnOutsideClick)
       dialog.removeEventListener("keydown", closeModalOnEscKey)
     }
   }, [dialogRef])
