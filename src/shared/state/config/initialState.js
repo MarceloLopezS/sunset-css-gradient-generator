@@ -1,4 +1,9 @@
-import { getAllURLSearchParams, getPreferedColorScheme, getURLSearchParam } from "../../utils/functions"
+import {
+  getAllUrlSearchParams,
+  getPreferedColorScheme,
+  getValidatedUrlParam,
+  isHexColor
+} from "../../utils/functions"
 import {
   SHOWN,
   INSIDE_CONTAINER,
@@ -10,25 +15,36 @@ import {
   DEGREES_0,
   CIRCLE,
   FARTHEST_CORNER,
-  HEX
+  HEX,
+  VALID_GRADIENT_STYLES,
+  VALID_LINEAR_DIRECTIONS,
+  VALID_RADIAL_SHAPES,
+  VALID_RADIAL_SIZES,
+  VALID_RADIAL_POSITIONS,
+  VALID_CONIC_START_ANGLES
 } from "../../utils/constants"
 
-const styleFromURL = getURLSearchParam("style")
+const styleFromURL = getValidatedUrlParam("style", VALID_GRADIENT_STYLES)
 const linearDirectionFromUrl =
-  styleFromURL === LINEAR && getURLSearchParam("direction")
+  styleFromURL === LINEAR
+  && getValidatedUrlParam("direction", VALID_LINEAR_DIRECTIONS)
 const radialShapeFromUrl =
-  styleFromURL === RADIAL && getURLSearchParam("shape")
+  styleFromURL === RADIAL
+  && getValidatedUrlParam("shape", VALID_RADIAL_SHAPES)
 const radialSizeFromUrl =
-  styleFromURL === RADIAL && getURLSearchParam("size")
+  styleFromURL === RADIAL
+  && getValidatedUrlParam("size", VALID_RADIAL_SIZES)
 const radialPositionFromUrl =
-  styleFromURL === RADIAL && getURLSearchParam("position")
+  styleFromURL === RADIAL
+  && getValidatedUrlParam("position", VALID_RADIAL_POSITIONS)
 const conicStartAngleFromUrl =
-  styleFromURL === CONIC && getURLSearchParam("startAngle")
-const colorsFromUrl = getAllURLSearchParams("color").map(colorString => {
+  styleFromURL === CONIC
+  && getValidatedUrlParam("startAngle", VALID_CONIC_START_ANGLES)
+const colorsFromUrl = getAllUrlSearchParams("color").map(colorString => {
   const [id, value, stop] = colorString.split(" ")
-
-  return { id, value: `#${value}`, stop }
-})
+  const formattedValue = isHexColor(`#${value}`) ? `#${value}` : null
+  return { id, value: formattedValue, stop }
+}).filter(color => color.value != null)
 
 const initialState = {
   theme: getPreferedColorScheme(),
@@ -48,7 +64,7 @@ const initialState = {
       startAngle: conicStartAngleFromUrl || DEGREES_0,
       position: CENTER
     },
-    colors: colorsFromUrl.length > 0 && colorsFromUrl || [
+    colors: colorsFromUrl.length > 1 && colorsFromUrl || [
       { id: 1, value: "#00308f", stop: null },
       { id: 2, value: "#fe5810", stop: null }
     ]
