@@ -33,12 +33,22 @@ export const getPreferedColorScheme = () => {
     : LIGHT
 }
 
-export const getURLSearchParam = (name) => {
+export const getUrlSearchParam = (name) => {
   return new URL(location.href).searchParams.get(name)
 }
 
-export const getAllURLSearchParams = (name) => {
+export const getAllUrlSearchParams = (name) => {
   return new URL(location.href).searchParams.getAll(name)
+}
+
+export const getValidatedUrlParam = (name, validValues = []) => {
+  const urlParamValue = getUrlSearchParam(name)
+
+  if (!Array.isArray(validValues) || validValues.length == 0)
+    throw new Error("Expect second parameter to be an array containing the valid values for URL param.")
+  if (!(validValues.includes(urlParamValue))) return null
+
+  return urlParamValue
 }
 
 export const capitalizeString = (string) => {
