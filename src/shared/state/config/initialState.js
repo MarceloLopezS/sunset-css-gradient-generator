@@ -65,7 +65,7 @@ const initialState = {
       position: CENTER
     },
     colors: colorsFromUrl.length > 1 && colorsFromUrl || [
-      { id: 1, value: "#00308f", stop: null },
+      { id: 1, value: "#00527a", stop: null },
       { id: 2, value: "#fe5810", stop: null }
     ]
   },
