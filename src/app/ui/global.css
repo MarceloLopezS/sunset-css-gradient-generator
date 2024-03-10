@@ -209,6 +209,7 @@ svg {
   --bg-theme: var(--bg-theme-dark);
   --accent-theme: var(--clr-accent-400);
   --clr-code: var(--clr-neutral-300);
+  --control-border: 2px solid var(--accent-theme);
 
   color: var(--clr-theme);
   background-color: var(--bg-theme);
