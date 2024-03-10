@@ -60,6 +60,7 @@
   --control-border: 2px solid var(--accent-theme);
   --control-border-radius: 0.35em;
   --control-gap: var(--size-50);
+  --control-color: var(--clr-theme-light);
 
   --default-animation-duration: 500ms;
   --default-animation-timing-function: ease;
