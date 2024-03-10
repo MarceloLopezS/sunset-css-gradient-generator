@@ -7,8 +7,9 @@
   border: var(--control-border);
   border-radius: var(--control-border-radius);
   outline: 1px solid transparent;
-  transition: background-color var(--default-animation-duration)
-    var(--default-animation-timing-function);
+  transition-property: border background-color;
+  transition-duration: var(--default-animation-duration);
+  transition-timing-function: var(--default-animation-timing-function);
 }
 
 .btn:hover,
