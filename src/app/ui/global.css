@@ -182,6 +182,7 @@ code {
 svg {
   width: 1em;
   height: 1em;
+  color: inherit;
 }
 
 ::-webkit-scrollbar {
@@ -226,9 +227,6 @@ svg {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  color: inherit;
-  background-color: inherit;
-  border: none;
 }
 
 .toggler-button:focus-visible {
@@ -236,15 +234,18 @@ svg {
 }
 
 .toggler-button svg {
-  color: var(--accent-theme);
   width: 100%;
   height: 100%;
+}
+
+.color-accent {
+  color: var(--accent-theme);
   transition: color var(--default-animation-duration)
     var(--default-animation-timing-function);
 }
 
-.toggler-button:hover svg,
-.toggler-button:focus-visible svg {
+.color-accent:hover,
+.color-accent:focus-visible {
   color: var(--clr-theme);
 }
 

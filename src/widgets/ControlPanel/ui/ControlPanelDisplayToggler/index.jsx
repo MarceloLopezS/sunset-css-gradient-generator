@@ -12,7 +12,7 @@ const ControlPanelDisplayToggler = () => {
 
   return (
     <button
-      className={`${styles["control-panel--toggler"]} | toggler-button`}
+      className={`${styles["control-panel--toggler"]} | toggler-button color-accent`}
       data-position={panelDisplayTogglerPosition}
       type="button"
       onClick={dispatchAction}
