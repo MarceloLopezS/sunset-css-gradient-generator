@@ -1,5 +1,5 @@
-import { useRef } from "react"
-import { dispatch } from "../../shared/state/store"
+import { useRef, forwardRef } from "react"
+import { useStoreData, dispatch } from "../../shared/state/store"
 import {
   DELETE_COLOR,
   SET_GRADIENT_COLOR
@@ -15,7 +15,8 @@ const validateStopInput = value => {
   return parsedVal
 }
 
-const InputColor = ({ id, value, stop, stopStyle, isDeleteable }) => {
+const InputColor = forwardRef(({ id, value, stop, isDeleteable }, ref) => {
+  const style = useStoreData(state => state.gradientOptions.style)
   const colorRef = useRef(null)
   const stopRef = useRef(null)
   const dispatchAction = (type, id) => () =>
@@ -29,7 +30,7 @@ const InputColor = ({ id, value, stop, stopStyle, isDeleteable }) => {
     })
 
   return (
-    <div className={styles["color-group"]}>
+    <div className={styles["color-group"]} ref={ref}>
       <label className={styles.label}>
         <span className="visually-hidden">{`Input color ${id}`}</span>
         <input
@@ -64,10 +65,10 @@ const InputColor = ({ id, value, stop, stopStyle, isDeleteable }) => {
             onChange={dispatchAction(SET_GRADIENT_COLOR, id)}
           />
         </label>
-        <span>{stopStyle === CONIC ? "°" : "%"}</span>
+        <span>{style === CONIC ? "°" : "%"}</span>
       </div>
     </div>
   )
-}
+})
 
 export default InputColor
