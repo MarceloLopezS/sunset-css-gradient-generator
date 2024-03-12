@@ -238,14 +238,14 @@ svg {
   height: 100%;
 }
 
-.color-accent {
+.accent-icon {
   color: var(--accent-theme);
   transition: color var(--default-animation-duration)
     var(--default-animation-timing-function);
 }
 
-.color-accent:hover,
-.color-accent:focus-visible {
+.accent-icon:hover:not(:disabled),
+.accent-icon:focus-visible:not(:disabled) {
   color: var(--clr-theme);
 }
 

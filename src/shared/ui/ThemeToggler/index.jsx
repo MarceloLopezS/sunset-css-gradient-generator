@@ -10,7 +10,7 @@ const ThemeToggler = () => {
 
   return (
     <button
-      className="theme-toggler | toggler-button color-accent"
+      className="theme-toggler | toggler-button accent-icon"
       type="button"
       onClick={dispatchAction}
     >

@@ -11,7 +11,7 @@ const ShareGradient = () => {
     <>
       <button
         ref={modalOpenerRef}
-        className={`${styles["share-button"]} | toggler-button color-accent`}
+        className={`${styles["share-button"]} | toggler-button accent-icon`}
       >
         <span className="visually-hidden">Share Gradient</span>
         <ShareSVG />
