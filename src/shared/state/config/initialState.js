@@ -40,11 +40,12 @@ const radialPositionFromUrl =
 const conicStartAngleFromUrl =
   styleFromURL === CONIC
   && getValidatedUrlParam("startAngle", VALID_CONIC_START_ANGLES)
-const colorsFromUrl = getAllUrlSearchParams("color").map(colorString => {
-  const [id, value, stop] = colorString.split(" ")
-  const formattedValue = isHexColor(`#${value}`) ? `#${value}` : null
-  return { id, value: formattedValue, stop }
-}).filter(color => color.value != null)
+const colorsFromUrl = getAllUrlSearchParams("color")
+  .map((colorString, index) => {
+    const [value, stop] = colorString.split(" ")
+    const formattedValue = isHexColor(`#${value}`) ? `#${value}` : null
+    return { id: index, value: formattedValue, stop }
+  }).filter(color => color.value != null)
 
 const initialState = {
   theme: getPreferedColorScheme(),

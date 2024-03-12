@@ -10,12 +10,12 @@ const LinkShare = () => {
   const gradientOptions = useStoreData(state => state.gradientOptions)
   const { style, colors } = gradientOptions
   const colorQueries = colors.reduce((acc, color, index) => {
-    const { id, value, stop } = color
+    const { value, stop } = color
 
     if (index === 0)
-      return `color=${id}+${value.slice(1)}${stop == null ? "" : "+" + stop}`
+      return `color=${value.slice(1)}${stop == null ? "" : "+" + stop}`
 
-    return `${acc}&color=${id}+${value.slice(1)}${stop == null ? "" : "+" + stop}`
+    return `${acc}&color=${value.slice(1)}${stop == null ? "" : "+" + stop}`
   }, "")
 
   const generateURL = pipe(
