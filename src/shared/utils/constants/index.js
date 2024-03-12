@@ -40,6 +40,10 @@ export const HEX = "Hex"
 export const RGB = "RGB"
 export const HSL = "HSL"
 export const HEX_COLOR_WHITE = "#ffffff"
+export const BACK = "back"
+export const FORWARD = "forward"
+export const PREVIOUS = "previous"
+export const NEXT = "next"
 export const VALID_GRADIENT_STYLES = [LINEAR, RADIAL, CONIC]
 export const VALID_LINEAR_DIRECTIONS = [
   LEFT,
