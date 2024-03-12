@@ -15,6 +15,31 @@ export const pipe = (...fns) => (value) => {
   return fns.reduce((acc, fn) => fn(acc), value)
 }
 
+export const areDeepEqual = (data1, data2) => {
+  if (
+    typeof data1 === 'object'
+    && typeof data2 === 'object'
+  ) {
+    if (data1 === null && data2 === null) return true;
+
+    const keys = Object.keys(data1);
+    let keysEquality;
+    for (let i = 0; i < keys.length; i++) {
+      try {
+        keysEquality = areDeepEqual(data1[keys[i]], data2[keys[i]]) ? true : false;
+        if (!keysEquality) break
+      } catch (e) {
+        keysEquality = false;
+        break
+      }
+    }
+
+    return keysEquality
+  }
+
+  return data1 === data2
+}
+
 export const setLocalStorageItem = (key, item) => {
   return localStorage.setItem(key, JSON.stringify(item))
 }
