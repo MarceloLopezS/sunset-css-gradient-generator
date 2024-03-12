@@ -1,0 +1,9 @@
+.snapshots-navigation {
+  display: flex;
+  gap: 1em;
+}
+
+.snapshots-navigation__control[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
