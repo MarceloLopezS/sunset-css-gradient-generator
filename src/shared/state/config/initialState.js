@@ -70,7 +70,8 @@ const initialState = {
       { id: 2, value: "#fe5810", stop: null }
     ]
   },
-  colorFormat: HEX
+  colorFormat: HEX,
+  colorSnapshots: []
 }
 
 export default initialState
