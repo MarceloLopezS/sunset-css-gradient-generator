@@ -15,20 +15,14 @@ const validateStopInput = value => {
   return parsedVal
 }
 
-const InputColor = ({
-  colorId,
-  colorValue,
-  colorStop,
-  colorStyle,
-  isDeleteable
-}) => {
+const InputColor = ({ id, value, stop, stopStyle, isDeleteable }) => {
   const colorRef = useRef(null)
   const stopRef = useRef(null)
-  const dispatchAction = (type, colorId) => () =>
+  const dispatchAction = (type, id) => () =>
     dispatch({
       type,
       payload: {
-        id: colorId,
+        id: id,
         value: colorRef.current.value,
         stop: validateStopInput(stopRef.current.value)
       }
@@ -37,20 +31,20 @@ const InputColor = ({
   return (
     <div className={styles["color-group"]}>
       <label className={styles.label}>
-        <span className="visually-hidden">{`Input color ${colorId}`}</span>
+        <span className="visually-hidden">{`Input color ${id}`}</span>
         <input
           ref={colorRef}
           type="color"
           className={styles.input}
-          value={colorValue}
-          onChange={dispatchAction(SET_GRADIENT_COLOR, colorId)}
+          value={value}
+          onChange={dispatchAction(SET_GRADIENT_COLOR, id)}
         />
         {isDeleteable && (
           <button
             className={styles["color--delete"]}
-            onClick={dispatchAction(DELETE_COLOR, colorId)}
+            onClick={dispatchAction(DELETE_COLOR, id)}
           >
-            <span className="visually-hidden">{`Delete color ${colorId}`}</span>
+            <span className="visually-hidden">{`Delete color ${id}`}</span>
             <TrashSVG />
           </button>
         )}
@@ -65,12 +59,12 @@ const InputColor = ({
             className={styles.input}
             minLength="1"
             maxLength="3"
-            value={colorStop ?? ""}
+            value={stop ?? ""}
             placeholder="-"
-            onChange={dispatchAction(SET_GRADIENT_COLOR, colorId)}
+            onChange={dispatchAction(SET_GRADIENT_COLOR, id)}
           />
         </label>
-        <span>{colorStyle === CONIC ? "°" : "%"}</span>
+        <span>{stopStyle === CONIC ? "°" : "%"}</span>
       </div>
     </div>
   )
