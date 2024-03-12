@@ -1,7 +1,7 @@
 const BACK = "back"
 const FORWARD = "forward"
 
-const HistoryDirectionArrow = ({ direction = BACK, ...attributes }) => {
+const HistoryDirectionArrowSVG = ({ direction = BACK, ...attributes }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -34,4 +34,4 @@ const HistoryDirectionArrow = ({ direction = BACK, ...attributes }) => {
   )
 }
 
-export default HistoryDirectionArrow
+export default HistoryDirectionArrowSVG
