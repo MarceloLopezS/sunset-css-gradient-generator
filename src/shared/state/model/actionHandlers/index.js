@@ -9,7 +9,9 @@ import {
   HEX_COLOR_WHITE,
   LINEAR,
   RADIAL,
-  CONIC
+  CONIC,
+  PREVIOUS,
+  NEXT
 } from "../../../utils/constants"
 import { getRandomHexColor, setLocalStorageItem } from "../../../utils/functions"
 
@@ -144,13 +146,37 @@ export const deleteColor = (state, action) => {
   return { ...state, gradientOptions }
 }
 
-export const randomizeColorValues = (state) => {
+export const randomizeColorValues = (state, action) => {
+  const { currentSnapshotIndex } = action.payload
   const { colors } = state.gradientOptions
+  const { colorSnapshots } = state
   const newColors = colors.map(color => (
     { ...color, value: getRandomHexColor() }
   ))
   const gradientOptions = {
     ...state.gradientOptions, colors: newColors
+  }
+  const newColorSnapshots = [
+    ...colorSnapshots.toSpliced(currentSnapshotIndex + 1, Infinity),
+    newColors
+  ]
+
+  return {
+    ...state,
+    gradientOptions,
+    colorSnapshots: newColorSnapshots.length <= 5
+      ? newColorSnapshots
+      : newColorSnapshots.toSpliced(0, 1)
+  }
+}
+
+export const navigateSnapshots = (state, action) => {
+  const { currentSnapshotIndex, goTo } = action.payload
+  const colors = goTo === PREVIOUS
+    ? state.colorSnapshots.at(currentSnapshotIndex - 1)
+    : goTo === NEXT && state.colorSnapshots.at(currentSnapshotIndex + 1)
+  const gradientOptions = {
+    ...state.gradientOptions, colors
   }
 
   return { ...state, gradientOptions }
