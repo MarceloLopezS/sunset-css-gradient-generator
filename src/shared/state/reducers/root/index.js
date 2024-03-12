@@ -12,7 +12,8 @@ import {
   SET_COLOR_FORMAT,
   RANDOMIZE_COLOR_VALUES,
   ADD_COLOR,
-  DELETE_COLOR
+  DELETE_COLOR,
+  NAVIGATE_SNAPSHOTS
 } from "../../config/actions"
 import {
   toggleTheme,
@@ -27,7 +28,8 @@ import {
   setColorFormat,
   randomizeColorValues,
   addColor,
-  deleteColor
+  deleteColor,
+  navigateSnapshots
 } from "../../model/actionHandlers"
 
 const rootReducer = (state, action) => {
@@ -57,7 +59,9 @@ const rootReducer = (state, action) => {
     case DELETE_COLOR:
       return deleteColor(state, action)
     case RANDOMIZE_COLOR_VALUES:
-      return randomizeColorValues(state)
+      return randomizeColorValues(state, action)
+    case NAVIGATE_SNAPSHOTS:
+      return navigateSnapshots(state, action)
     default: {
       console.error(`Unknown action: ${action.type}`)
       return state
