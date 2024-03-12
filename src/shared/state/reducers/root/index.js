@@ -1,4 +1,3 @@
-import { POSITION, SHAPE, SIZE } from "../../../utils/constants"
 import {
   TOGGLE_THEME,
   TOGGLE_PANEL_DISPLAY,
