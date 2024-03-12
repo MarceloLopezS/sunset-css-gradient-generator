@@ -1,3 +1,18 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.history-controls-wrapper {
+  display: flex;
+  gap: 1em;
+}
+
+.history-control-button[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .controls-wrapper {
   display: flex;
   flex-direction: column;
