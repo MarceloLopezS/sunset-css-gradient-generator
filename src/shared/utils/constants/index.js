@@ -1,3 +1,4 @@
+export const BASE_URL = "/CSS-gradient-generator/"
 export const THEME = "theme"
 export const DARK = "dark"
 export const LIGHT = "light"
