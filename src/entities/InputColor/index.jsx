@@ -43,6 +43,7 @@ const InputColor = forwardRef(({ id, value, stop, isDeleteable }, ref) => {
         {isDeleteable && (
           <button
             className={styles["color--delete"]}
+            type="button"
             onClick={dispatchAction(DELETE_COLOR, id)}
           >
             <span className="visually-hidden">{`Delete color ${id}`}</span>
