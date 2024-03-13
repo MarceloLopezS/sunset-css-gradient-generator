@@ -22,7 +22,7 @@
   transform: translate(135%, -50%) scale(0);
   color: var(--accent-theme);
   visibility: hidden;
-  transition-property: transform background-color;
+  transition-property: transform, color;
   transition-duration: var(--default-animation-duration);
   transition-timing-function: var(--default-animation-timing-function);
 }
