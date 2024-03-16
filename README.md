@@ -11,6 +11,14 @@ This tool offers a lot of flexibility that allows the application of almost ever
 This project was developed using React.js at it's core, as it is a very powerful library that allows organized and predictable state management.
 This technology is complemented by clean, organized and up to date code using a functional programming paradigm; alongside best practices for an optimal understanding and readability.
 
-As code organization was a primary focus for development, Feature Slice Design was used as the architectural methodology of choice due to it's flexibility and ease of comprehension, making it suitable for this front-end project.
+Code organization was a primary focus for development and, therefore, Feature Slice Design was used as the architectural methodology of choice due to it's flexibility and ease of comprehension, making it suitable for this front-end project.
 
-Performance was also a very important goal and, in order to be achieved, many aspects were optimized, such as memoization and prevention of unnecessary component re-renders. For this last, Zustand library was added as a dependency.
+As mentioned before, a functional paradigm approach was used for the whole application, including state management. For that reason, a Flux architecture with a Redux-like pattern was used in order to centralize state in a unique store that describes de application. The state mutations are triggered by actions dispatched to a reducer.
+
+Performance was also a very important goal and, in order to be achieved, many aspects were optimized, such as memoization and prevention of unnecessary component re-renders.
+This last was achieved with Zustand library, which is suitable for not so complex state management. Even though it's not as powerful as Redux, it's still covers the majority of needed functionality such as subscriptions to a specific state property, preventing unnecesary re-renders from components that use other parts of the state. It also has very low bundle size, which was desired for this project so it can be very lightweight and performant.
+
+Accessibility is another important point that was taken into account during development, and many aspects were focused on the ease of use for all kinds of users, starting with the color selection that ensures readable text and optimal contrast ratio, in both light and dark mode.
+The application was also developed to be fully functional for keyboard navigation and every button has readable text for screen readers, although is visually hidden; helping users with any disability still be able to use this tool.
+
+The result is an intuitive, accessible, powerful and performant tool that delivers a lot of flexibility to users. And also features a predictable, scalable and maintainable codebase for continuous improvement.
