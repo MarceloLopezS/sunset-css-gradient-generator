@@ -1,4 +1,4 @@
-import { useStoreData } from "../../shared/state/store"
+import { useStoreData } from "@/shared/state/store"
 import {
   pipe,
   initGradientStyle,
@@ -9,8 +9,8 @@ import {
   appendGradientPosition,
   appendLinearDirection,
   appendGradientColors
-} from "../../shared/utils/functions"
-import CodeContainer from "../../shared/ui/CodeContainer"
+} from "@/shared/utils/functions"
+import CodeContainer from "@/shared/ui/CodeContainer"
 
 const GeneratedCode = () => {
   const gradientOptions = useStoreData(state => state.gradientOptions)
