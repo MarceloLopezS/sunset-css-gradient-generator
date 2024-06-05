@@ -1,11 +1,8 @@
 import { useRef, forwardRef } from "react"
-import { useStoreData, dispatch } from "../../shared/state/store"
-import {
-  DELETE_COLOR,
-  SET_GRADIENT_COLOR
-} from "../../shared/state/config/actions"
-import { CONIC } from "../../shared/utils/constants"
-import TrashSVG from "../../shared/ui/SVGs/Trash"
+import { useStoreData, dispatch } from "@/shared/state/store"
+import { DELETE_COLOR, SET_GRADIENT_COLOR } from "@/shared/state/config/actions"
+import { CONIC } from "@/shared/utils/constants"
+import TrashSVG from "@/shared/ui/SVGs/Trash"
 import styles from "./ui/styles.module.css"
 
 const validateStopInput = value => {
