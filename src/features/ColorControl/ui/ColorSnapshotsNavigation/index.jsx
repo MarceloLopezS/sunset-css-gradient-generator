@@ -1,11 +1,6 @@
-import {
-  BACK,
-  FORWARD,
-  NEXT,
-  PREVIOUS
-} from "../../../../shared/utils/constants"
-import { NAVIGATE_SNAPSHOTS } from "../../../../shared/state/config/actions"
-import HistoryDirectionArrowSVG from "../../../../shared/ui/SVGs/HistoryDirectionArrow"
+import { BACK, FORWARD, NEXT, PREVIOUS } from "@/shared/utils/constants"
+import { NAVIGATE_SNAPSHOTS } from "@/shared/state/config/actions"
+import HistoryDirectionArrowSVG from "@/shared/ui/SVGs/HistoryDirectionArrow"
 import styles from "./ui/styles.module.css"
 
 const availableHistoryButtons = [PREVIOUS, NEXT]
