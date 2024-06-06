@@ -1,9 +1,9 @@
-import { CENTER } from "../../../../shared/utils/constants"
+import { CENTER } from "@/shared/utils/constants"
+import { SET_RADIAL_POSITION } from "@/shared/state/config/actions"
+import ControlButton from "@/shared/ui/ControlButton"
+import NarrowCircleSVG from "@/shared/ui/SVGs/NarrowCircle"
+import NarrowDirectionCircle from "@/shared/ui/SVGs/NarrowDirectionCircle"
 import { RADIAL_POSITIONS } from "../../config/spatialProps"
-import { SET_RADIAL_POSITION } from "../../../../shared/state/config/actions"
-import ControlButton from "../../../../shared/ui/ControlButton"
-import NarrowCircleSVG from "../../../../shared/ui/SVGs/NarrowCircle"
-import NarrowDirectionCircle from "../../../../shared/ui/SVGs/NarrowDirectionCircle"
 
 const ButtonsRadial = ({ currentPosition, dispatcher }) => {
   return (
