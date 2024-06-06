@@ -1,9 +1,9 @@
-import { useStoreData, dispatch } from "../../shared/state/store"
-import { ELLIPSE, CIRCLE, RADIAL } from "../../shared/utils/constants"
-import { SET_RADIAL_SHAPE } from "../../shared/state/config/actions"
-import { capitalizeString } from "../../shared/utils/functions"
-import ButtonGrid from "../../shared/ui/ButtonGrid"
-import ControlButton from "../../shared/ui/ControlButton"
+import { useStoreData, dispatch } from "@/shared/state/store"
+import { ELLIPSE, CIRCLE, RADIAL } from "@/shared/utils/constants"
+import { SET_RADIAL_SHAPE } from "@/shared/state/config/actions"
+import { capitalizeString } from "@/shared/utils/functions"
+import ButtonGrid from "@/shared/ui/ButtonGrid"
+import ControlButton from "@/shared/ui/ControlButton"
 
 const availableShapes = [ELLIPSE, CIRCLE]
 
