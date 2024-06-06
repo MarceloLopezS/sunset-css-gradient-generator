@@ -1,8 +1,8 @@
-import { EMPTY } from "../../../../shared/utils/constants"
+import { EMPTY } from "@/shared/utils/constants"
+import { SET_CONIC_START_ANGLE } from "@/shared/state/config/actions"
+import ControlButton from "@/shared/ui/ControlButton"
+import NarrowStartFromArrow from "@/shared/ui/SVGs/NarrowStartFromArrow"
 import { CONIC_START_ANGLES } from "../../config/spatialProps"
-import { SET_CONIC_START_ANGLE } from "../../../../shared/state/config/actions"
-import ControlButton from "../../../../shared/ui/ControlButton"
-import NarrowStartFromArrow from "../../../../shared/ui/SVGs/NarrowStartFromArrow"
 
 const ButtonsConicGradient = ({ currentStartAngle, dispatcher }) => {
   return (
