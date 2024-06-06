@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react"
-import { useStoreData, dispatch } from "../../shared/state/store"
+import { useStoreData, dispatch } from "@/shared/state/store"
 import {
   ADD_COLOR,
   RANDOMIZE_COLOR_VALUES
-} from "../../shared/state/config/actions"
-import { areDeepEqual } from "../../shared/utils/functions"
-import InputColor from "../../entities/InputColor"
-import ControlButton from "../../shared/ui/ControlButton"
-import PlusInCircle from "../../shared/ui/SVGs/PlusInCircle"
+} from "@/shared/state/config/actions"
+import { areDeepEqual } from "@/shared/utils/functions"
+import InputColor from "@/entities/InputColor"
+import ControlButton from "@/shared/ui/ControlButton"
+import PlusInCircle from "@/shared/ui/SVGs/PlusInCircle"
 import ColorSnapshotsNavigation from "./ui/ColorSnapshotsNavigation"
 import styles from "./ui/styles.module.css"
 
