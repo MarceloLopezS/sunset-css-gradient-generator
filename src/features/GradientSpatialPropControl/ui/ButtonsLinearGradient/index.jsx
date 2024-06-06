@@ -1,8 +1,8 @@
-import { EMPTY } from "../../../../shared/utils/constants"
+import { EMPTY } from "@/shared/utils/constants"
+import { SET_LINEAR_DIRECTION } from "@/shared/state/config/actions"
+import ControlButton from "@/shared/ui/ControlButton"
+import NarrowArrowSVG from "@/shared/ui/SVGs/NarrowArrow"
 import { LINEAR_DIRECTIONS } from "../../config/spatialProps"
-import { SET_LINEAR_DIRECTION } from "../../../../shared/state/config/actions"
-import ControlButton from "../../../../shared/ui/ControlButton"
-import NarrowArrowSVG from "../../../../shared/ui/SVGs/NarrowArrow"
 
 const ButtonsLinear = ({ currentDirection, dispatcher }) => {
   return (
