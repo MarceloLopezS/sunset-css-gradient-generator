@@ -1,9 +1,9 @@
-import { LINEAR, RADIAL, CONIC } from "../../shared/utils/constants"
-import { capitalizeString } from "../../shared/utils/functions"
-import { SET_GRADIENT_STYLE } from "../../shared/state/config/actions"
-import { useStoreData, dispatch } from "../../shared/state/store"
-import ButtonGrid from "../../shared/ui/ButtonGrid"
-import ControlButton from "../../shared/ui/ControlButton"
+import { LINEAR, RADIAL, CONIC } from "@/shared/utils/constants"
+import { capitalizeString } from "@/shared/utils/functions"
+import { SET_GRADIENT_STYLE } from "@/shared/state/config/actions"
+import { useStoreData, dispatch } from "@/shared/state/store"
+import ButtonGrid from "@/shared/ui/ButtonGrid"
+import ControlButton from "@/shared/ui/ControlButton"
 
 const styleOptions = [LINEAR, RADIAL, CONIC]
 
