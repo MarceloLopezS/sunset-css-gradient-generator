@@ -1,7 +1,7 @@
-import { useStoreData, dispatch } from "../../../../shared/state/store"
-import { TOGGLE_PANEL_DISPLAY } from "../../../../shared/state/config/actions"
-import { LEFT } from "../../../../shared/utils/constants"
-import FilledArrowSVG from "../../../../shared/ui/SVGs/FilledArrow"
+import { useStoreData, dispatch } from "@/shared/state/store"
+import { TOGGLE_PANEL_DISPLAY } from "@/shared/state/config/actions"
+import { LEFT } from "@/shared/utils/constants"
+import FilledArrowSVG from "@/shared/ui/SVGs/FilledArrow"
 import styles from "./ui/styles.module.css"
 
 const ControlPanelDisplayToggler = () => {
