@@ -1,6 +1,6 @@
 import { useRef } from "react"
-import ShareSVG from "../../shared/ui/SVGs/Share"
-import Modal from "../../shared/ui/Modal"
+import ShareSVG from "@/shared/ui/SVGs/Share"
+import Modal from "@/shared/ui/Modal"
 import LinkShare from "./ui/LinkShare"
 import styles from "./ui/styles.module.css"
 
