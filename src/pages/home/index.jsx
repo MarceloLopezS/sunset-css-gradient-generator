@@ -1,6 +1,6 @@
-import { useStoreData } from "../../shared/state/store"
-import ControlPanel from "../../widgets/ControlPanel"
-import GradientDisplay from "../../entities/GradientDisplay"
+import { useStoreData } from "@/shared/state/store"
+import ControlPanel from "@/widgets/ControlPanel"
+import GradientDisplay from "@/entities/GradientDisplay"
 import styles from "./ui/styles.module.css"
 
 const Home = () => {
