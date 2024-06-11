@@ -1,4 +1,4 @@
-import GeneratedCode from "../../../../entities/GeneratedCode"
+import GeneratedCode from "@/entities/GeneratedCode"
 
 const ControlPanelOutputCode = () => {
   return (
