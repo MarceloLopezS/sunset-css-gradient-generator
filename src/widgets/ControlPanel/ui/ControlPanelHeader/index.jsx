@@ -1,8 +1,8 @@
-import ThemeToggler from "../../../../shared/ui/ThemeToggler"
+import ThemeToggler from "@/shared/ui/ThemeToggler"
+import { BASE_URL } from "@/shared/utils/constants"
+import ShareGradient from "@/features/ShareGradient"
 import ControlPanelDisplayToggler from "../ControlPanelDisplayToggler"
-import ShareGradient from "../../../../features/ShareGradient"
 import styles from "./ui/styles.module.css"
-import { BASE_URL } from "../../../../shared/utils/constants"
 
 const ControlPanelHeader = () => {
   return (
