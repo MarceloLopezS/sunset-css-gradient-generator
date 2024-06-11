@@ -1,6 +1,6 @@
+import GithubSVG from "@/shared/ui/SVGs/Github"
+import AboutSVG from "@/shared/ui/SVGs/About"
 import styles from "./ui/styles.module.css"
-import GithubSVG from "../../../../shared/ui/SVGs/Github"
-import AboutSVG from "../../../../shared/ui/SVGs/About"
 
 const ControlPanelFooter = () => {
   return (
