@@ -1,7 +1,7 @@
-import GradientRadialShapeControl from "../../../../features/GradientRadialShapeControl"
-import GradientRadialSizeControl from "../../../../features/GradientRadialSizeControl"
-import { useStoreData } from "../../../../shared/state/store"
-import { RADIAL } from "../../../../shared/utils/constants"
+import GradientRadialShapeControl from "@/features/GradientRadialShapeControl"
+import GradientRadialSizeControl from "@/features/GradientRadialSizeControl"
+import { useStoreData } from "@/shared/state/store"
+import { RADIAL } from "@/shared/utils/constants"
 
 const ControlPanelRadialExtraProps = () => {
   const style = useStoreData(state => state.gradientOptions.style)
