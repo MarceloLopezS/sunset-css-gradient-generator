@@ -1,5 +1,5 @@
 import "./ui/global.css"
-import Home from "../pages/home"
+import Home from "@/pages/home"
 
 const App = () => {
   return <Home />
