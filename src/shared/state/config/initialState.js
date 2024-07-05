@@ -67,7 +67,7 @@ const initialState = {
     },
     colors: colorsFromUrl.length > 1 && colorsFromUrl || [
       { id: 1, value: "#00527a", stop: null },
-      { id: 2, value: "#fe5810", stop: null }
+      { id: 2, value: "#ff4d00", stop: null }
     ]
   },
   colorFormat: HEX,
