@@ -1,4 +1,4 @@
-import { useRef, forwardRef } from "react"
+import { useRef } from "react"
 import { useStoreData, dispatch } from "@/shared/state/store"
 import { DELETE_COLOR, SET_GRADIENT_COLOR } from "@/shared/state/config/actions"
 import { CONIC } from "@/shared/utils/constants"
@@ -12,7 +12,7 @@ const validateStopInput = value => {
   return parsedVal
 }
 
-const InputColor = forwardRef(({ id, value, stop, isDeleteable }, ref) => {
+const InputColor = ({ id, value, stop, isDeleteable, ref }) => {
   const style = useStoreData(state => state.gradientOptions.style)
   const colorRef = useRef(null)
   const stopRef = useRef(null)
@@ -67,6 +67,6 @@ const InputColor = forwardRef(({ id, value, stop, isDeleteable }, ref) => {
       </div>
     </div>
   )
-})
+}
 
 export default InputColor
