@@ -45,7 +45,7 @@ export const BACK = "back"
 export const FORWARD = "forward"
 export const PREVIOUS = "previous"
 export const NEXT = "next"
-export const VALID_GRADIENT_STYLES = [LINEAR, RADIAL, CONIC]
+export const VALID_GRADIENT_STYLES = [LINEAR, RADIAL, CONIC] as const
 export const VALID_LINEAR_DIRECTIONS = [
   LEFT,
   TOP_LEFT,
@@ -55,11 +55,14 @@ export const VALID_LINEAR_DIRECTIONS = [
   BOTTOM_RIGHT,
   BOTTOM,
   BOTTOM_LEFT
-]
-export const VALID_RADIAL_SHAPES = [ELLIPSE, CIRCLE]
+] as const
+export const VALID_RADIAL_SHAPES = [ELLIPSE, CIRCLE] as const
 export const VALID_RADIAL_SIZES = [
-  CLOSEST_SIDE, FARTHEST_SIDE, CLOSEST_CORNER, FARTHEST_CORNER
-]
+  CLOSEST_SIDE,
+  FARTHEST_SIDE,
+  CLOSEST_CORNER,
+  FARTHEST_CORNER
+] as const
 export const VALID_RADIAL_POSITIONS = [
   LEFT,
   TOP_LEFT,
@@ -70,7 +73,7 @@ export const VALID_RADIAL_POSITIONS = [
   BOTTOM,
   BOTTOM_LEFT,
   CENTER
-]
+] as const
 export const VALID_CONIC_START_ANGLES = [
   DEGREES_0,
   DEGREES_45,
@@ -80,4 +83,4 @@ export const VALID_CONIC_START_ANGLES = [
   DEGREES_225,
   DEGREES_270,
   DEGREES_315
-]
+] as const
